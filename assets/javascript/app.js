@@ -13,6 +13,17 @@ document.addEventListener('click', e => {
   }
 })
 
+const shuffle = (a) => {
+  let j, x, i
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1))
+    x = a[i]
+    a[i] = a[j]
+    a[j] = x
+  }
+   console.log(a)
+}
+
 const hereWeGo = _ => {
   let timeleft = 30
   questionTimer = setInterval(function () {
@@ -29,9 +40,12 @@ const hereWeGo = _ => {
     timeleft -= 1
   }, 1000)
   hideInstructions()
-  showQuestionArea()
+  showQuestionArea()  
   clearAnswerChoices()
   document.querySelector('#question').textContent = questions[questionCounter].question
+
+  shuffle(questions[questionCounter].options)
+
   for (let i = 0; i <= 3; i++) {
     let button = document.createElement('button')
     button.innerHTML = `${questions[questionCounter].options[i]}`
@@ -101,14 +115,10 @@ const result = (clickedAnswer) => {
   }
 }
 
-// if not answered, display correct answer and also something about failing (don't be Dan?), setInterval() back to hereWeGo
-
 // whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
 
 // when the last question is answered OR when the time runs out for the last question
 // itterate over questions, count isCorrect, display scores
-
-// either way: move on to next question wihout user input (setInterval/setTimeout?)
 
 // add up number questions answered, number right, number wrong, ((how long it took??))
 
