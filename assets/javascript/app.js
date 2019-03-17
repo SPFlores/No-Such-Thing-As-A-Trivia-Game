@@ -1,22 +1,19 @@
 let questionCounter = 0
 let correctlyAnswered = 0
 let incorrectlyAnswered = 0
-let timeleft
-let questionTimer
+let timeleft,
+  questionTimer
 
 document.addEventListener('click', e => {
   if (e.target.id === 'questionOption') {
     result(e.target.innerHTML)
-    // console.log('will run result check function')
   } else if (e.target.id === 'reset') {
     console.log('reset button clicked')
     init()
   }
 })
 
-// page with question populates once the play/ready button is pressed OR when the next question should be displayed
 const hereWeGo = _ => {
-  // console.log('here we go')
   let timeleft = 30
   questionTimer = setInterval(function () {
     if ((timeleft >= 10)) {
@@ -32,7 +29,6 @@ const hereWeGo = _ => {
   hideInstructions()
   showQuestionArea()
   document.querySelector('#question').textContent = questions[questionCounter].question
-
   for (let i = 0; i <= 3; i++) {
     let button = document.createElement('button')
     button.innerHTML = `${questions[questionCounter].options[i]}`
@@ -53,49 +49,40 @@ const showQuestionArea = _ => {
 
 const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
-  
+  document.querySelector('#timer').innerHTML = ''
   // show incorrect answer page
-  // incorrectlyAnswered++
+  incorrectlyAnswered++
   questionCounter++
-  console.log(questionCounter)
   document.querySelector('#answerChoices').innerHTML = ''
-  // timeleft = 30
-  // hereWeGo()
+  setTimeout(hereWeGo, 7000)
+
 }
 
 const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
-  
+  document.querySelector('#timer').innerHTML = ''
   // show correct answer page
-  // correctlyAnswered++
+  correctlyAnswered++
   questionCounter++
-  console.log(questionCounter)
   document.querySelector('#answerChoices').innerHTML = ''
-  // timeleft = 30
-  hereWeGo()
+  setTimeout(hereWeGo, 7000)
 }
 
 const result = (clickedAnswer) => {
   if (clickedAnswer === `${questions[questionCounter].correct}`) {
-    console.log('correct')
+    // console.log('correct')
     correctAnswerChosen()
   } else {
-    console.log('incorrect')
+    // console.log('incorrect')
     incorrectAnswerChosen()
   }
 }
 
-// eval if the answer was correct (check to see if question[questionCounter].correct was clicked????)
 // if correct, display something about answer being right, correctlyAnswered++, back to hereWeGo
 // if wrong, display something about the answer being wrong, incorrectlyAnswered++, setInterval() to go back to hereWeGo
 // if not answered, display correct answer and also something about failing (don't be Dan?), setInterval() back to hereWeGo
-// let timeleft = 30 when you go to a new question
 
 // whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
-
-// [
-//  { questionid, isCorrect}
-// ]
 
 // when the last question is answered OR when the time runs out for the last question
 // itterate over questions, count isCorrect, display scores
@@ -108,8 +95,6 @@ const result = (clickedAnswer) => {
 const init = _ => {
   console.log('init func')
 }
-
-// object of all the questions, wrong choices, correct choice, wrong text, wrong img, correct text, correct image
 
 init()
 
