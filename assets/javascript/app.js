@@ -5,15 +5,15 @@ let incorrectlyAnswered = 0
 // eventlisteners to listen for:
 document.addEventListener('click', e => {
   // user clicks play/ready button
-  if (e.target.id = 'readyButton') {
+  if (e.target.id === 'readyButton') {
     console.log('ready button clicked')
   }
   // user clicks on an option in a question
-  else if (e.target.id = 'questionOption') {
+  else if (e.target.id === 'questionOption') {
     console.log('questionOption')
   }
   // user clicks on the reset button to play again
-  else if (e.target.id = 'reset') {
+  else if (e.target.id === 'reset') {
     console.log('reset button clicked')
   }
 })
