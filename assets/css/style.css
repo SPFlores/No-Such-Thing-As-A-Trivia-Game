@@ -4,4 +4,13 @@ body {
 
 .gameArea {
   margin-top: 50px;
+  padding: 20px;
+}
+
+#questionRow {
+  display: none;
+}
+
+#answersRow {
+  display: none;
 }

@@ -14,9 +14,16 @@ document.addEventListener('click', e => {
 })
 
 const hideInstructions = _ => {
-  document.querySelector('#')
+  document.querySelector('#instructions').style.display = 'none'
+  document.querySelector('#readyButton').style.display = 'none'
 }
 
+const showQuestionArea = _ => {
+  document.querySelector('#questionRow').style.display = 'inline'
+  document.querySelector('#answersRow').style.display = 'inline'
+}
+
+// page with question populates once the play/ready button is pressed OR when the next question should be displayed
 const hereWeGo = _ => {
   console.log('here we go')
   let timeleft = 30
@@ -30,9 +37,15 @@ const hereWeGo = _ => {
       document.querySelector('#timer').innerHTML = '00:00'
     }
   }, 1000)
+  hideInstructions()
+  showQuestionArea()
   document.querySelector('#question').textContent = questions[questionCounter].question
-  // page with question populates once the play/ready button is pressed OR when the next question should be displayed
   // gives question from array at index questionCounter with 4 answers, each of them clickable (refer to eventlistener above) -- need to make buttons!!
+  for (let i = 0; i <= 2; i++) {
+    let button = document.createElement('button')
+    button.innerHTML = `${questions[questionCounter].wrong[i]}`
+    document.querySelector('#answerChoices').append(button)
+  }
   // eval if the answer was correct ()
 }
 
@@ -67,9 +80,9 @@ init()
 const questions = [
   {
     question: '1 + 1 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    wrong: ['3', '11', '1'],
+    // wrong2: '11',
+    // wrong3: '1',
     correct: '2',
     wrongtext: 'Nope, 1 + 1 = 2.',
     wrongimage: './assets/images/wrong.jpg',
