@@ -29,6 +29,7 @@ const hereWeGo = _ => {
   }, 1000)
   hideInstructions()
   showQuestionArea()
+  clearAnswerChoices()
   document.querySelector('#question').textContent = questions[questionCounter].question
   for (let i = 0; i <= 3; i++) {
     let button = document.createElement('button')
@@ -48,19 +49,19 @@ const showQuestionArea = _ => {
   document.querySelector('#answersRow').style.display = 'inline'
 }
 
+const clearAnswerChoices = _ => {
+  document.querySelector('#answerChoices').innerHTML = ''
+}
+
 const incorrectAnswerPage = _ => {
-  // say "incorrect" in #question
   document.querySelector('#question').textContent = questions[questionCounter].wrongtext
-  // show incorrect image in #answerChoices
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].wrongimage}" alt="incorrect answer picture">
   `
 }
 
 const correctAnswerPage = _ => {
-  // show "correct" in #question
   document.querySelector('#question').textContent = questions[questionCounter].correcttext
-  // show correct image in #answerChoices
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].correctimage}" alt="correct answer image">
   `
@@ -71,35 +72,27 @@ const incorrectAnswerChosen = _ => {
   document.querySelector('#timer').innerHTML = ''
   incorrectlyAnswered++
   questionCounter++
-  // document.querySelector('#answerChoices').innerHTML = ''
-  // show incorrect answer page
   incorrectAnswerPage()
   setTimeout(hereWeGo, 7000)
 }
 
 const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
-  // document.querySelector('#timer').innerHTML = ''
+  document.querySelector('#timer').innerHTML = ''
   correctlyAnswered++
   questionCounter++
-  // show correct answer page
   correctAnswerPage()
-  document.querySelector('#answerChoices').innerHTML = ''
   setTimeout(hereWeGo, 7000)
 }
 
 const result = (clickedAnswer) => {
   if (clickedAnswer === `${questions[questionCounter].correct}`) {
-    // console.log('correct')
     correctAnswerChosen()
   } else {
-    // console.log('incorrect')
     incorrectAnswerChosen()
   }
 }
 
-// if correct, display something about answer being right, correctlyAnswered++, back to hereWeGo
-// if wrong, display something about the answer being wrong, incorrectlyAnswered++, setInterval() to go back to hereWeGo
 // if not answered, display correct answer and also something about failing (don't be Dan?), setInterval() back to hereWeGo
 
 // whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
