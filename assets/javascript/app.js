@@ -20,9 +20,10 @@ const hereWeGo = _ => {
       document.querySelector('#timer').innerHTML = '00:' + timeleft
     } else if ((timeleft < 10) && (timeleft > 0)) {
       document.querySelector('#timer').innerHTML = '00:0' + timeleft
-    } else if (timeleft <= 0) {
+    } else if (timeleft === 0) {
       clearInterval(questionTimer)
-      document.querySelector('#timer').innerHTML = '00:00'
+      document.querySelector('#answerChoices').innerHTML = ''
+      // show incorrect page
     }
     timeleft -= 1
   }, 1000)
@@ -47,23 +48,42 @@ const showQuestionArea = _ => {
   document.querySelector('#answersRow').style.display = 'inline'
 }
 
+const incorrectAnswerPage = _ => {
+  // say "incorrect" in #question
+  document.querySelector('#question').textContent = questions[questionCounter].wrongtext
+  // show incorrect image in #answerChoices
+  document.querySelector('#answerChoices').innerHTML = `
+  <img src="${questions[questionCounter].wrongimage}" alt="incorrect answer picture">
+  `
+}
+
+const correctAnswerPage = _ => {
+  // show "correct" in #question
+  document.querySelector('#question').textContent = questions[questionCounter].correcttext
+  // show correct image in #answerChoices
+  document.querySelector('#answerChoices').innerHTML = `
+  <img src="${questions[questionCounter].correctimage}" alt="correct answer image">
+  `
+}
+
 const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
-  // show incorrect answer page
   incorrectlyAnswered++
   questionCounter++
-  document.querySelector('#answerChoices').innerHTML = ''
+  // document.querySelector('#answerChoices').innerHTML = ''
+  // show incorrect answer page
+  incorrectAnswerPage()
   setTimeout(hereWeGo, 7000)
-
 }
 
 const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
-  document.querySelector('#timer').innerHTML = ''
-  // show correct answer page
+  // document.querySelector('#timer').innerHTML = ''
   correctlyAnswered++
   questionCounter++
+  // show correct answer page
+  correctAnswerPage()
   document.querySelector('#answerChoices').innerHTML = ''
   setTimeout(hereWeGo, 7000)
 }
@@ -104,89 +124,89 @@ const questions = [
     options: ['3', '11', '1', '2'],
     correct: '2',
     wrongtext: 'Nope, 1 + 1 = 2.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: `Right! 1 + 1 = 2!`,
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 2 = ?',
     options: ['3', '11', '1', '2'],
     correct: '3',
     wrongtext: 'Nope, 1 + 2 = 3.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 3 = ?',
     options: ['3', '11', '4', '2'],
     correct: '4',
     wrongtext: 'Nope, 1 + 3 = 4.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 4 = ?',
     options: ['3', '11', '1', '5'],
     correct: '5',
     wrongtext: 'Nope, 1 + 4 = 5.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 5 = ?',
     options: ['3', '6', '1', '2'],
     correct: '6',
     wrongtext: 'Nope, 1 + 5 = 6.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 6 = ?',
     options: ['7', '11', '1', '2'],
     correct: '7',
     wrongtext: 'Nope, 1 + 6 = 7.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 7 = ?',
     options: ['3', '8', '1', '2'],
     correct: '8',
     wrongtext: 'Nope, 1 + 7 = 8.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 8 = ?',
     options: ['3', '11', '1', '9'],
     correct: '9',
     wrongtext: 'Nope, 1 + 8 = 9.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 9 = ?',
     options: ['3', '10', '1', '2'],
     correct: '10',
     wrongtext: 'Nope, 1 + 9 = 10.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   },
   {
     question: '1 + 10 = ?',
     options: ['3', '11', '1', '2'],
     correct: '11',
     wrongtext: 'Nope, 1 + 10 = 11.',
-    wrongimage: './assets/images/wrong.jpg',
+    wrongimage: './assets/images/wrong.gif',
     correcttext: 'Right! 1 + 1 = 2!',
-    correctimage: './assets/images/correct.jpg'
+    correctimage: './assets/images/correct.gif'
   }
 ]
