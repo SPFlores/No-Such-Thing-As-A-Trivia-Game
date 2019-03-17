@@ -2,6 +2,7 @@ let questionCounter = 0
 let correctlyAnswered = 0
 let incorrectlyAnswered = 0
 let timeleft
+let questionTimer
 
 document.addEventListener('click', e => {
   if (e.target.id === 'questionOption') {
@@ -12,6 +13,33 @@ document.addEventListener('click', e => {
     init()
   }
 })
+
+// page with question populates once the play/ready button is pressed OR when the next question should be displayed
+const hereWeGo = _ => {
+  // console.log('here we go')
+  let timeleft = 30
+  questionTimer = setInterval(function () {
+    if ((timeleft >= 10)) {
+      document.querySelector('#timer').innerHTML = '00:' + timeleft
+    } else if ((timeleft < 10) && (timeleft > 0)) {
+      document.querySelector('#timer').innerHTML = '00:0' + timeleft
+    } else if (timeleft <= 0) {
+      clearInterval(questionTimer)
+      document.querySelector('#timer').innerHTML = '00:00'
+    }
+    timeleft -= 1
+  }, 1000)
+  hideInstructions()
+  showQuestionArea()
+  document.querySelector('#question').textContent = questions[questionCounter].question
+
+  for (let i = 0; i <= 3; i++) {
+    let button = document.createElement('button')
+    button.innerHTML = `${questions[questionCounter].options[i]}`
+    button.id = 'questionOption'
+    document.querySelector('#answerChoices').append(button)
+  }
+}
 
 const hideInstructions = _ => {
   document.querySelector('#instructions').style.display = 'none'
@@ -24,13 +52,27 @@ const showQuestionArea = _ => {
 }
 
 const incorrectAnswerChosen = _ => {
+  clearInterval(questionTimer)
+  
   // show incorrect answer page
   // incorrectlyAnswered++
+  questionCounter++
+  console.log(questionCounter)
+  document.querySelector('#answerChoices').innerHTML = ''
+  // timeleft = 30
+  // hereWeGo()
 }
 
 const correctAnswerChosen = _ => {
+  clearInterval(questionTimer)
+  
   // show correct answer page
   // correctlyAnswered++
+  questionCounter++
+  console.log(questionCounter)
+  document.querySelector('#answerChoices').innerHTML = ''
+  // timeleft = 30
+  hereWeGo()
 }
 
 const result = (clickedAnswer) => {
@@ -41,33 +83,6 @@ const result = (clickedAnswer) => {
     console.log('incorrect')
     incorrectAnswerChosen()
   }
-}
-
-// page with question populates once the play/ready button is pressed OR when the next question should be displayed
-const hereWeGo = _ => {
-  console.log('here we go')
-  let timeleft = 30
-  const questionTimer = setInterval(function () {
-    document.querySelector('#timer').innerHTML = '00:' + timeleft
-    timeleft -= 1
-    if ((timeleft < 10) && (timeleft > 0)) {
-      document.querySelector('#timer').innerHTML = '00:0' + timeleft
-    } else if (timeleft <= 0) {
-      clearInterval(questionTimer)
-      document.querySelector('#timer').innerHTML = '00:00'
-    }
-  }, 1000)
-  hideInstructions()
-  showQuestionArea()
-  document.querySelector('#question').textContent = questions[questionCounter].question
-  // gives question from array at index questionCounter with 4 answers, each of them clickable (refer to eventlistener above) -- need to make buttons!!
-  for (let i = 0; i <= 3; i++) {
-    let button = document.createElement('button')
-    button.innerHTML = `${questions[questionCounter].options[i]}`
-    button.id = 'questionOption'
-    document.querySelector('#answerChoices').append(button)
-  }
-  // eval if the answer was correct ()
 }
 
 // eval if the answer was correct (check to see if question[questionCounter].correct was clicked????)
@@ -102,8 +117,6 @@ const questions = [
   {
     question: '1 + 1 = ?',
     options: ['3', '11', '1', '2'],
-    // wrong2: '11',
-    // wrong3: '1',
     correct: '2',
     wrongtext: 'Nope, 1 + 1 = 2.',
     wrongimage: './assets/images/wrong.jpg',
@@ -112,9 +125,7 @@ const questions = [
   },
   {
     question: '1 + 2 = ?',
-    wrong1: '4',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['3', '11', '1', '2'],
     correct: '3',
     wrongtext: 'Nope, 1 + 2 = 3.',
     wrongimage: './assets/images/wrong.jpg',
@@ -123,9 +134,7 @@ const questions = [
   },
   {
     question: '1 + 3 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['3', '11', '4', '2'],
     correct: '4',
     wrongtext: 'Nope, 1 + 3 = 4.',
     wrongimage: './assets/images/wrong.jpg',
@@ -134,9 +143,7 @@ const questions = [
   },
   {
     question: '1 + 4 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['3', '11', '1', '5'],
     correct: '5',
     wrongtext: 'Nope, 1 + 4 = 5.',
     wrongimage: './assets/images/wrong.jpg',
@@ -145,9 +152,7 @@ const questions = [
   },
   {
     question: '1 + 5 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['3', '6', '1', '2'],
     correct: '6',
     wrongtext: 'Nope, 1 + 5 = 6.',
     wrongimage: './assets/images/wrong.jpg',
@@ -156,9 +161,7 @@ const questions = [
   },
   {
     question: '1 + 6 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['7', '11', '1', '2'],
     correct: '7',
     wrongtext: 'Nope, 1 + 6 = 7.',
     wrongimage: './assets/images/wrong.jpg',
@@ -167,9 +170,7 @@ const questions = [
   },
   {
     question: '1 + 7 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['3', '8', '1', '2'],
     correct: '8',
     wrongtext: 'Nope, 1 + 7 = 8.',
     wrongimage: './assets/images/wrong.jpg',
@@ -178,9 +179,7 @@ const questions = [
   },
   {
     question: '1 + 8 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['3', '11', '1', '9'],
     correct: '9',
     wrongtext: 'Nope, 1 + 8 = 9.',
     wrongimage: './assets/images/wrong.jpg',
@@ -189,9 +188,7 @@ const questions = [
   },
   {
     question: '1 + 9 = ?',
-    wrong1: '3',
-    wrong2: '11',
-    wrong3: '1',
+    options: ['3', '10', '1', '2'],
     correct: '10',
     wrongtext: 'Nope, 1 + 9 = 10.',
     wrongimage: './assets/images/wrong.jpg',
@@ -200,9 +197,7 @@ const questions = [
   },
   {
     question: '1 + 10 = ?',
-    wrong1: '3',
-    wrong2: '9',
-    wrong3: '1',
+    options: ['3', '11', '1', '2'],
     correct: '11',
     wrongtext: 'Nope, 1 + 10 = 11.',
     wrongimage: './assets/images/wrong.jpg',
