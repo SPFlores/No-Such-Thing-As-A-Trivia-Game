@@ -3,8 +3,9 @@ body {
 }
 
 .gameArea {
-  margin-top: 50px;
+  margin-top: 35px;
   padding: 20px;
+  min-height: 750px;
 }
 
 #questionRow {
@@ -27,6 +28,92 @@ body {
   display: none;
 }
 
-#answerBtn {
+.questionOption {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  min-height: 60px;
+  width: 75%;
+  font-size: 20px;
+  border: 3px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
 
+.questionOption:hover {
+  box-shadow: 0 5px slategray;
+  transform: translateY(4px);
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+}
+
+#readyButton:hover {
+  box-shadow: 0 5px slategray;
+  transform: translateY(4px);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.questionImage {
+  margin: auto;
+  max-width: 300px;
+}
+
+#readyButton h5 {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#readyButton h5:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#readyButton:hover h5 {
+  padding-right: 25px;
+}
+
+#readyButton:hover h5:after {
+  opacity: 1;
+  right: 0;
+}
+
+.questionOption h5 {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.questionOption h5:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.questionOption:hover h5 {
+  padding-right: 25px;
+}
+
+.questionOption:hover h5:after {
+  opacity: 1;
+  right: 0;
 }

@@ -6,8 +6,9 @@ let timeleft,
   questionTimer
 
 document.addEventListener('click', e => {
-  if (e.target.id === 'questionOption') {
+  if (e.target.classList.contains('questionOption')) {
     result(e.target.innerHTML)
+    console.log('button clicked')
   }
 })
 
@@ -47,7 +48,7 @@ const clearAnswerChoices = _ => {
 const incorrectAnswerPage = _ => {
   document.querySelector('#question').textContent = questions[questionCounter].wrongtext
   document.querySelector('#answerChoices').innerHTML = `
-  <img src="${questions[questionCounter].wrongimage}" alt="incorrect answer picture">
+  <img src="${questions[questionCounter].wrongimage}" alt="incorrect answer picture" class="questionImage">
   `
   incorrectlyAnswered++
   questionCounter++
@@ -56,7 +57,7 @@ const incorrectAnswerPage = _ => {
 const correctAnswerPage = _ => {
   document.querySelector('#question').textContent = questions[questionCounter].correcttext
   document.querySelector('#answerChoices').innerHTML = `
-  <img src="${questions[questionCounter].correctimage}" alt="correct answer image">
+  <img src="${questions[questionCounter].correctimage}" alt="correct answer image" class="questionImage">
   `
   correctlyAnswered++
   questionCounter++
@@ -65,7 +66,7 @@ const correctAnswerPage = _ => {
 const noAnswerPage = _ => {
   document.querySelector('#question').textContent = `You didn't answer this one! Couldn't make up your mind? That's okay. ${questions[questionCounter].correcttext}`
   document.querySelector('#answerChoices').innerHTML = `
-  <img src="${questions[questionCounter].correctimage}" alt="correct answer image">
+  <img src="${questions[questionCounter].wrongimage}" alt="no answer image" class="questionImage">
   `
 }
 
@@ -126,10 +127,8 @@ const hereWeGo = _ => {
     shuffle(questions[questionCounter].options)
     for (let i = 0; i <= 3; i++) {
       let button = document.createElement('button')
-      button.className = 'yellow accent-2 btn-large black-text'
-      button.id = 'answerBtn'
-      button.innerHTML = `${questions[questionCounter].options[i]}`
-      button.id = 'questionOption'
+      button.className = 'yellow accent-2 btn-large black-text z-depth-3 questionOption'
+      button.innerHTML = `<h5>${questions[questionCounter].options[i]} </h5>`
       document.querySelector('#answerChoices').append(button)
     }
   } else if (questionCounter === questions.length) {

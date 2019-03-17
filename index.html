@@ -17,53 +17,46 @@
   <!-- container holding game area -->
   <div class="container black white-text center-align gameArea" id="gameArea">
 
-    <!-- title -- display @ start: show display @ hereWeGo: show display @ result: show -->
     <div class="row" id="title">
       <div class="col s12 m12 l12 xl12">
         <!-- title of game -->
-        <h1 id="title">NO SUCH THING AS A TRIVIA GAME</h1>
+        <h2 id="title">NO SUCH THING AS A TRIVIA GAME</h2>
       </div>
     </div>
 
-    <!-- time counter -- display @ start: show display @ hereWeGo: show display @ result: none -->
     <div class="row" id="timer">
       <div class="col s12 m12 l12 xl12">
         <div id="timer"></div>
       </div>
     </div>
 
-    <!-- instructions -- display @ start: show display @ hereWeGo: none display @ result: none -->
     <div class="row" id="instructions">
       <div class="col s12 m12 l12 xl12">
         <!-- shows on page load then is taken away dynamically when the player clicks the Ready Button -->
-        <h4>Welcome to another episode of No Such Thing As A Trivia Game! My name is Dan Schreiber. Today we have 10
-          questions for you to answer. In no particular order, here we go.</h4>
+        <h5>Welcome to another episode of No Such Thing As A Trivia Game! My name is Dan Schreiber. Today we have 10
+          questions for you to answer. In no particular order, here we go.</h5>
       </div>
     </div>
 
-    <!-- buttons -- display @ start: show display @ hereWeGo: show display @ result: show -->
     <div class="row" id="buttons">
       <div class="col s12 m12 l12 xl12">
-        <button onclick="shuffleQuestions(questions)" id="readyButton" class="yellow accent-2 btn-large black-text">Here we go!</button>
-        <button onclick="reset()" id="reset" class="yellow accent-2 btn-large black-text">Reset</button>
+        <button onclick="shuffleQuestions(questions)" id="readyButton" class="yellow accent-2 btn-large black-text"><h5>Here we go! </h5></button>
+        <button onclick="reset()" id="reset" class="yellow accent-2 btn-large black-text"><h5>Reset </h5></button>
       </div>
     </div>
 
-    <!-- question -- display @ start: none display @ hereWeGo: show display @ result: none -->
     <div class="row" id="questionRow">
       <div class="col s12 m12 l12 xl12">
         <h3 id="question"></h3>
       </div>
     </div>
 
-    <!-- answers -- display @ start: none display @ hereWeGo: show display @ result: none -->
     <div class="row" id="answersRow">
       <div class="col s12 m12 l12 xl12">
         <div id="answerChoices"></div>
       </div>
     </div>
 
-    <!-- results -- display @ start: none display @ hereWeGo: none display @ result: show -->
     <div class="row" id="resultsRow">
       <div class="col s12 m12 l12 xl12">
         <div id="results"></div>
