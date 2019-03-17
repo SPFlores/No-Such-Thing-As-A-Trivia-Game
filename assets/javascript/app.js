@@ -136,6 +136,8 @@ const hereWeGo = _ => {
     shuffle(questions[questionCounter].options)
     for (let i = 0; i <= 3; i++) {
       let button = document.createElement('button')
+      button.className = 'yellow accent-2 btn-large black-text'
+      button.id = 'answerBtn'
       button.innerHTML = `${questions[questionCounter].options[i]}`
       button.id = 'questionOption'
       document.querySelector('#answerChoices').append(button)
@@ -147,7 +149,6 @@ const hereWeGo = _ => {
 
 // whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
 
-// reset button func
 const reset = _ => {
   document.querySelector('#timer').style.display = 'inline'
   document.querySelector('#resultsRow').style.display = 'none'
@@ -157,6 +158,7 @@ const reset = _ => {
   correctlyAnswered = 0
   incorrectlyAnswered = 0
   timeTaken = 0
+  shuffleQuestions(questions)
 }
 
 const questions = [

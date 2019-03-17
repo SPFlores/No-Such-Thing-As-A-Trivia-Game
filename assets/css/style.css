@@ -1,5 +1,4 @@
 body {
-  background: yellow;
   font-family: 'Reem Kufi', sans-serif;
 }
 
@@ -26,4 +25,8 @@ body {
 
 #resultsRow {
   display: none;
+}
+
+#answerBtn {
+
 }
