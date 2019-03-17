@@ -32,36 +32,6 @@ const shuffle = (a) => {
   }
 }
 
-const hereWeGo = _ => {
-  let timeleft = 30
-  questionTimer = setInterval(function () {
-    if ((timeleft >= 10)) {
-      document.querySelector('#timer').innerHTML = '00:' + timeleft
-    } else if ((timeleft < 10) && (timeleft > 0)) {
-      document.querySelector('#timer').innerHTML = '00:0' + timeleft
-    } else if (timeleft === 0) {
-      clearInterval(questionTimer)
-      document.querySelector('#answerChoices').innerHTML = ''
-      // show didn't answer page
-      noAnswerPage()
-    }
-    timeleft -= 1
-  }, 1000)
-  hideInstructions()
-  showQuestionArea()
-  clearAnswerChoices()
-  document.querySelector('#question').textContent = questions[questionCounter].question
-
-  shuffle(questions[questionCounter].options)
-
-  for (let i = 0; i <= 3; i++) {
-    let button = document.createElement('button')
-    button.innerHTML = `${questions[questionCounter].options[i]}`
-    button.id = 'questionOption'
-    document.querySelector('#answerChoices').append(button)
-  }
-}
-
 const hideInstructions = _ => {
   document.querySelector('#instructions').style.display = 'none'
   document.querySelector('#readyButton').style.display = 'none'
@@ -105,14 +75,24 @@ const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   incorrectAnswerPage()
-  setTimeout(hereWeGo, 7000)
+  setTimeout(hereWeGo, 2000)
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
 }
 
 const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   correctAnswerPage()
-  setTimeout(hereWeGo, 7000)
+  setTimeout(hereWeGo, 2000)
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
+  // MAKE SURE TO CHANGE INTERVAL
 }
 
 const result = (clickedAnswer) => {
@@ -120,6 +100,35 @@ const result = (clickedAnswer) => {
     correctAnswerChosen()
   } else {
     incorrectAnswerChosen()
+  }
+}
+
+const hereWeGo = _ => {
+  if (questionCounter < questions.length) {
+    let timeleft = 30
+    questionTimer = setInterval(function () {
+      if ((timeleft > 0)) {
+        document.querySelector('#timer').innerHTML = 'You have ' + timeleft + ' seconds left to answer'
+      } else if (timeleft === 0) {
+        clearInterval(questionTimer)
+        document.querySelector('#answerChoices').innerHTML = ''
+        noAnswerPage()
+      }
+      timeleft -= 1
+    }, 1000)
+    hideInstructions()
+    showQuestionArea()
+    clearAnswerChoices()
+    document.querySelector('#question').textContent = questions[questionCounter].question
+    shuffle(questions[questionCounter].options)
+    for (let i = 0; i <= 3; i++) {
+      let button = document.createElement('button')
+      button.innerHTML = `${questions[questionCounter].options[i]}`
+      button.id = 'questionOption'
+      document.querySelector('#answerChoices').append(button)
+    }
+  } else if (questionCounter === questions.length) {
+    finalPage()
   }
 }
 
