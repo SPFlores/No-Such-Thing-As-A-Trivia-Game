@@ -5,9 +5,9 @@ let timeleft
 
 document.addEventListener('click', e => {
   if (e.target.id === 'questionOption') {
-    console.log('questionOption')
-  }
-  else if (e.target.id === 'reset') {
+    result(e.target.innerHTML)
+    // console.log('will run result check function')
+  } else if (e.target.id === 'reset') {
     console.log('reset button clicked')
     init()
   }
@@ -21,6 +21,26 @@ const hideInstructions = _ => {
 const showQuestionArea = _ => {
   document.querySelector('#questionRow').style.display = 'inline'
   document.querySelector('#answersRow').style.display = 'inline'
+}
+
+const incorrectAnswerChosen = _ => {
+  // show incorrect answer page
+  // incorrectlyAnswered++
+}
+
+const correctAnswerChosen = _ => {
+  // show correct answer page
+  // correctlyAnswered++
+}
+
+const result = (clickedAnswer) => {
+  if (clickedAnswer === `${questions[questionCounter].correct}`) {
+    console.log('correct')
+    correctAnswerChosen()
+  } else {
+    console.log('incorrect')
+    incorrectAnswerChosen()
+  }
 }
 
 // page with question populates once the play/ready button is pressed OR when the next question should be displayed
@@ -41,9 +61,10 @@ const hereWeGo = _ => {
   showQuestionArea()
   document.querySelector('#question').textContent = questions[questionCounter].question
   // gives question from array at index questionCounter with 4 answers, each of them clickable (refer to eventlistener above) -- need to make buttons!!
-  for (let i = 0; i <= 2; i++) {
+  for (let i = 0; i <= 3; i++) {
     let button = document.createElement('button')
-    button.innerHTML = `${questions[questionCounter].wrong[i]}`
+    button.innerHTML = `${questions[questionCounter].options[i]}`
+    button.id = 'questionOption'
     document.querySelector('#answerChoices').append(button)
   }
   // eval if the answer was correct ()
@@ -80,7 +101,7 @@ init()
 const questions = [
   {
     question: '1 + 1 = ?',
-    wrong: ['3', '11', '1'],
+    options: ['3', '11', '1', '2'],
     // wrong2: '11',
     // wrong3: '1',
     correct: '2',
