@@ -23,7 +23,8 @@ const hereWeGo = _ => {
     } else if (timeleft === 0) {
       clearInterval(questionTimer)
       document.querySelector('#answerChoices').innerHTML = ''
-      // show incorrect page
+      // show didn't answer page
+      noAnswerPage()
     }
     timeleft -= 1
   }, 1000)
@@ -64,6 +65,13 @@ const correctAnswerPage = _ => {
   document.querySelector('#question').textContent = questions[questionCounter].correcttext
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].correctimage}" alt="correct answer image">
+  `
+}
+
+const noAnswerPage = _ => {
+  document.querySelector('#question').textContent = `You didn't answer this one! Couldn't make up your mind?`
+  document.querySelector('#answerChoices').innerHTML = `
+  <img src="./assets/images/didntanswer.gif" alt="no answer image">
   `
 }
 
