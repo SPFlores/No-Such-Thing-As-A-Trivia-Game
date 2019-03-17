@@ -69,9 +69,9 @@ const correctAnswerPage = _ => {
 }
 
 const noAnswerPage = _ => {
-  document.querySelector('#question').textContent = `You didn't answer this one! Couldn't make up your mind?`
+  document.querySelector('#question').textContent = `You didn't answer this one! Couldn't make up your mind? That's okay. ${questions[questionCounter].correcttext}`
   document.querySelector('#answerChoices').innerHTML = `
-  <img src="./assets/images/didntanswer.gif" alt="no answer image">
+  <img src="${questions[questionCounter].correctimage}" alt="correct answer image">
   `
 }
 
