@@ -8,9 +8,6 @@ let timeleft,
 document.addEventListener('click', e => {
   if (e.target.id === 'questionOption') {
     result(e.target.innerHTML)
-  } else if (e.target.id === 'reset') {
-    console.log('reset button clicked')
-    init()
   }
 })
 
@@ -73,22 +70,24 @@ const noAnswerPage = _ => {
 }
 
 const finalPage = _ => {
-console.log('final page')
-// hide timer
-// hide answer choices
-// hide question
-// show results div
-  // how many right
-  // how many wrong
-  // how long it took
-// show reset button -- different func to run reset params
+  document.querySelector('#timer').style.display = 'none'
+  document.querySelector('#question').style.display = 'none'
+  document.querySelector('#answerChoices').style.display = 'none'
+  document.querySelector('#resultsRow').style.display = 'inline'
+  document.querySelector('#results').innerHTML = `
+  <h3>Questions correct: ${correctlyAnswered}</h3>
+  <h3>Questions wrong: ${incorrectlyAnswered}</h3>
+  <h3>You took ${timeTaken / 10} seconds to complete this quiz.</h3>
+  <h2>Play again?</h2>
+  `
+  document.querySelector('#reset').style.display = 'inline'
 }
 
 const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   incorrectAnswerPage()
-  setTimeout(hereWeGo, 2000)
+  setTimeout(hereWeGo, 1000)
   // MAKE SURE TO CHANGE INTERVAL
   // MAKE SURE TO CHANGE INTERVAL
   // MAKE SURE TO CHANGE INTERVAL
@@ -100,7 +99,7 @@ const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   correctAnswerPage()
-  setTimeout(hereWeGo, 2000)
+  setTimeout(hereWeGo, 1000)
   // MAKE SURE TO CHANGE INTERVAL
   // MAKE SURE TO CHANGE INTERVAL
   // MAKE SURE TO CHANGE INTERVAL
@@ -117,12 +116,11 @@ const result = (clickedAnswer) => {
 }
 
 const hereWeGo = _ => {
-  document.querySelector('#timer').style.display = 'inline'
   if (questionCounter < questions.length) {
-    let timeleft = 30
+    timeleft = 300
     questionTimer = setInterval(function () {
       if ((timeleft > 0)) {
-        document.querySelector('#timer').innerHTML = 'You have ' + timeleft + ' seconds left to answer'
+        document.querySelector('#timer').innerHTML = 'You have ' + (Math.ceil(timeleft / 10)) + ' seconds left to answer'
       } else if (timeleft === 0) {
         clearInterval(questionTimer)
         document.querySelector('#answerChoices').innerHTML = ''
@@ -130,7 +128,7 @@ const hereWeGo = _ => {
       }
       timeleft -= 1
       timeTaken += 1
-    }, 1000)
+    }, 100)
     hideInstructions()
     showQuestionArea()
     clearAnswerChoices()
@@ -149,17 +147,17 @@ const hereWeGo = _ => {
 
 // whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
 
-// when the last question is answered OR when the time runs out for the last question
-// itterate over questions, count isCorrect, display scores
-
-// add up number questions answered, number right, number wrong, ((how long it took??))
-
-// reset/play again button
-const init = _ => {
-  console.log('init func')
+// reset button func
+const reset = _ => {
+  document.querySelector('#timer').style.display = 'inline'
+  document.querySelector('#resultsRow').style.display = 'none'
+  document.querySelector('#results').innerHTML = ''
+  document.querySelector('#reset').style.display = 'none'
+  questionCounter = 0
+  correctlyAnswered = 0
+  incorrectlyAnswered = 0
+  timeTaken = 0
 }
-
-init()
 
 const questions = [
   {
