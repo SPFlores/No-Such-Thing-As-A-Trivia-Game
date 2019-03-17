@@ -1,6 +1,7 @@
 let questionCounter = 0
 let correctlyAnswered = 0
 let incorrectlyAnswered = 0
+let timeleft
 
 document.addEventListener('click', e => {
   if (e.target.id === 'questionOption') {
@@ -11,6 +12,10 @@ document.addEventListener('click', e => {
     init()
   }
 })
+
+const hideInstructions = _ => {
+  document.querySelector('#')
+}
 
 const hereWeGo = _ => {
   console.log('here we go')
@@ -23,18 +28,19 @@ const hereWeGo = _ => {
     } else if (timeleft <= 0) {
       clearInterval(questionTimer)
       document.querySelector('#timer').innerHTML = '00:00'
-      // let timeleft = 30 when you go to a new question
     }
   }, 1000)
+  document.querySelector('#question').textContent = questions[questionCounter].question
   // page with question populates once the play/ready button is pressed OR when the next question should be displayed
   // gives question from array at index questionCounter with 4 answers, each of them clickable (refer to eventlistener above) -- need to make buttons!!
   // eval if the answer was correct ()
 }
 
-  // eval if the answer was correct (check to see if question[questionCounter].correct was clicked????)
-  // if correct, display something about answer being right, correctlyAnswered++, back to hereWeGo
-  // if wrong, display something about the answer being wrong, incorrectlyAnswered++, setInterval() to go back to hereWeGo
-  // if not answered, display correct answer and also something about failing (don't be Dan?), setInterval() back to hereWeGo
+// eval if the answer was correct (check to see if question[questionCounter].correct was clicked????)
+// if correct, display something about answer being right, correctlyAnswered++, back to hereWeGo
+// if wrong, display something about the answer being wrong, incorrectlyAnswered++, setInterval() to go back to hereWeGo
+// if not answered, display correct answer and also something about failing (don't be Dan?), setInterval() back to hereWeGo
+// let timeleft = 30 when you go to a new question
 
 // whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
 

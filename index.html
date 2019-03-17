@@ -15,36 +15,46 @@
 <body>
   <!-- container holding game area -->
   <div class="container black white-text center-align gameArea" id="gameArea">
-    <div class="row">
+    <div class="row" id="title">
       <div class="col s12 m12 l12 xl12">
         <!-- title of game -->
         <h1>No Such Thing As A Trivia Game</h1>
       </div>
     </div>
+
     <!-- time counter -->
-    <div class="row">
+    <div class="row" id="timer">
       <div class="col s12 m12 l12 xl12">
         <div id="timer"></div>
       </div>
     </div>
 
-    <!-- shows on page load then is taken away dynamically when the player clicks the Ready Button -->
-    <h4>Welcome to another episode of No Such Thing As A Trivia Game! My name is Dan Schreiber. Today we have 10
-      questions for you to answer. In no particular order, here we go.</h4>
-    <button onclick="hereWeGo()" id="readyButton">Here we go!</button>
-    <button onclick="init()" id="reset">Reset</button>
+    <div class="row" id="instructions">
+      <div class="col s12 m12 l12 xl12">
+        <!-- shows on page load then is taken away dynamically when the player clicks the Ready Button -->
+        <h4>Welcome to another episode of No Such Thing As A Trivia Game! My name is Dan Schreiber. Today we have 10
+          questions for you to answer. In no particular order, here we go.</h4>
+      </div>
+    </div>
+
+    <div class="row" id="buttons">
+      <div class="col s12 m12 l12 xl12">
+        <button onclick="hereWeGo()" id="readyButton">Here we go!</button>
+        <button onclick="init()" id="reset">Reset</button>
+      </div>
+    </div>
 
     <!-- start of question area--dynamically updated as the questions appear but has some inherent elements for ease of clicking etc -->
     <div class="row">
       <div class="col s12 m12 l12 xl12">
-        <h6>Questions go here</h6>
-        <div id="questionOption">something</div>
+        <h3 id="question">Questions go here</h3>
       </div>
     </div>
+
     <!-- answers -->
     <div class="row">
       <div class="col s12 m12 l12 xl12">
-        <h6>This is where the answers go</h6>
+        <div id="answerChoices">This is where the answers go</div>
       </div>
     </div>
 
