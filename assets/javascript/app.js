@@ -1,6 +1,7 @@
 let questionCounter = 0
 let correctlyAnswered = 0
 let incorrectlyAnswered = 0
+let timeTaken = 0
 let timeleft,
   questionTimer
 
@@ -71,6 +72,18 @@ const noAnswerPage = _ => {
   `
 }
 
+const finalPage = _ => {
+console.log('final page')
+// hide timer
+// hide answer choices
+// hide question
+// show results div
+  // how many right
+  // how many wrong
+  // how long it took
+// show reset button -- different func to run reset params
+}
+
 const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
@@ -104,6 +117,7 @@ const result = (clickedAnswer) => {
 }
 
 const hereWeGo = _ => {
+  document.querySelector('#timer').style.display = 'inline'
   if (questionCounter < questions.length) {
     let timeleft = 30
     questionTimer = setInterval(function () {
@@ -115,6 +129,7 @@ const hereWeGo = _ => {
         noAnswerPage()
       }
       timeleft -= 1
+      timeTaken += 1
     }, 1000)
     hideInstructions()
     showQuestionArea()

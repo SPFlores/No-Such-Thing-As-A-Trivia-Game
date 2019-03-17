@@ -14,3 +14,11 @@ body {
 #answersRow {
   display: none;
 }
+
+#timer {
+  display: none;
+}
+
+#reset {
+  display: none;
+}
