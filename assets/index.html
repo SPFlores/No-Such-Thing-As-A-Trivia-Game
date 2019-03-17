@@ -22,11 +22,16 @@
       </div>
     </div>
     <!-- time counter -->
-
+<div class="row">
+  <div class="col s12 m12 l12 xl12">
+    <div id="timer"></div>
+  </div>
+</div>
 
     <!-- shows on page load then is taken away dynamically when the player clicks the Ready Button -->
-    <h4>Welcome to another episode of No Such Thing As A Trivia Game. My name is Dan Schrieber. Today we have 10 questions for you to answer. In no particular order, here we go.</h4>
+    <h4>Welcome to another episode of No Such Thing As A Trivia Game! My name is Dan Schreiber. Today we have 10 questions for you to answer. In no particular order, here we go.</h4>
     <button onclick="hereWeGo()" id="readyButton">Here we go!</button>
+    <button onclick="init()" id="reset">Reset</button>
 
     <!-- start of question area--dynamically updated as the questions appear but has some inherent elements for ease of clicking etc -->
     <div class="row">
@@ -37,7 +42,7 @@
     <!-- answers -->
     <div class="row">
       <div class="col s12 m12 l12 xl12">
-        <h6>this is where the answers go. Make this col centered on any page--offset etc.</h6>
+        <h6>This is where the answers go</h6>
       </div>
     </div>
 

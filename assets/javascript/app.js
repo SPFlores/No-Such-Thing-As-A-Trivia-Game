@@ -4,10 +4,9 @@ let incorrectlyAnswered = 0
 
 // eventlisteners to listen for:
 document.addEventListener('click', e => {
-  console.log(e.target.id)
   // user clicks play/ready button
   if (e.target.id = 'readyButton') {
-    // console.log('ready button clicked')
+    console.log('ready button clicked')
   }
   // user clicks on an option in a question
   else if (e.target.id = 'questionOption') {
@@ -18,7 +17,6 @@ document.addEventListener('click', e => {
     console.log('reset button clicked')
   }
 })
-// open to page with game name, instructions, play/ready button
 
 const hereWeGo = _ => {
   // page with question populates once the play/ready button is pressed OR when the next question should be displayed
@@ -28,7 +26,20 @@ const hereWeGo = _ => {
   // is wrong, display something about the answer being wrong, incorrectlyAnswered++
   // if not answered, display correct answer and also something about failing (don't be Dan?)
   console.log('here we go')
+  let timeleft = 30
+  const questionTimer = setInterval(function () {
+    document.querySelector('#timer').innerHTML = '00:' + timeleft
+    timeleft -= 1
+    if ((timeleft < 10) && (timeleft > 0)) {
+      document.querySelector('#timer').innerHTML = '00:0' + timeleft
+    } else if (timeleft <= 0) {
+      clearInterval(questionTimer)
+      document.querySelector('#timer').innerHTML = '00:00'
+      // let timeleft = 30 when you go to a new question
+    }
+  }, 1000)
 }
+
 
 // whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
 
