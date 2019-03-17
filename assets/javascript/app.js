@@ -18,6 +18,7 @@ const shuffleQuestions = (a) => {
     a[i] = a[j]
     a[j] = x
   }
+  console.log('questions shufled')
   hereWeGo()
 }
 
@@ -71,8 +72,8 @@ const noAnswerPage = _ => {
 
 const finalPage = _ => {
   document.querySelector('#timer').style.display = 'none'
-  document.querySelector('#question').style.display = 'none'
-  document.querySelector('#answerChoices').style.display = 'none'
+  document.querySelector('#questionRow').style.display = 'none'
+  document.querySelector('#answersRow').style.display = 'none'
   document.querySelector('#resultsRow').style.display = 'inline'
   document.querySelector('#results').innerHTML = `
   <h3>Questions correct: ${correctlyAnswered}</h3>
@@ -146,8 +147,6 @@ const hereWeGo = _ => {
     finalPage()
   }
 }
-
-// whenever we click on a choice: set the clicked one to look different, set the rest to look default, modify question object to have value for wheter they answered right or wrong
 
 const reset = _ => {
   document.querySelector('#timer').style.display = 'inline'
