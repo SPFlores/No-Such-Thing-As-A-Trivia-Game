@@ -13,15 +13,23 @@ document.addEventListener('click', e => {
   }
 })
 
-const shuffle = (a) => {
-  let j, x, i
-  for (i = a.length - 1; i > 0; i--) {
-    j = Math.floor(Math.random() * (i + 1))
-    x = a[i]
+const shuffleQuestions = (a) => {
+  for (let i = (a.length - 1); i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let x = a[i]
     a[i] = a[j]
     a[j] = x
   }
-   console.log(a)
+  hereWeGo()
+}
+
+const shuffle = (a) => {
+  for (let i = (a.length - 1); i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let x = a[i]
+    a[i] = a[j]
+    a[j] = x
+  }
 }
 
 const hereWeGo = _ => {
@@ -40,7 +48,7 @@ const hereWeGo = _ => {
     timeleft -= 1
   }, 1000)
   hideInstructions()
-  showQuestionArea()  
+  showQuestionArea()
   clearAnswerChoices()
   document.querySelector('#question').textContent = questions[questionCounter].question
 
@@ -73,6 +81,8 @@ const incorrectAnswerPage = _ => {
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].wrongimage}" alt="incorrect answer picture">
   `
+  incorrectlyAnswered++
+  questionCounter++
 }
 
 const correctAnswerPage = _ => {
@@ -80,6 +90,8 @@ const correctAnswerPage = _ => {
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].correctimage}" alt="correct answer image">
   `
+  correctlyAnswered++
+  questionCounter++
 }
 
 const noAnswerPage = _ => {
@@ -92,8 +104,6 @@ const noAnswerPage = _ => {
 const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
-  incorrectlyAnswered++
-  questionCounter++
   incorrectAnswerPage()
   setTimeout(hereWeGo, 7000)
 }
@@ -101,8 +111,6 @@ const incorrectAnswerChosen = _ => {
 const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
-  correctlyAnswered++
-  questionCounter++
   correctAnswerPage()
   setTimeout(hereWeGo, 7000)
 }
@@ -145,7 +153,7 @@ const questions = [
     correct: '3',
     wrongtext: 'Nope, 1 + 2 = 3.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 2 = 3!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -154,7 +162,7 @@ const questions = [
     correct: '4',
     wrongtext: 'Nope, 1 + 3 = 4.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 3 = 4!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -163,7 +171,7 @@ const questions = [
     correct: '5',
     wrongtext: 'Nope, 1 + 4 = 5.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 4 = 5!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -172,7 +180,7 @@ const questions = [
     correct: '6',
     wrongtext: 'Nope, 1 + 5 = 6.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 5 = 6!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -181,7 +189,7 @@ const questions = [
     correct: '7',
     wrongtext: 'Nope, 1 + 6 = 7.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 6 = 7!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -190,7 +198,7 @@ const questions = [
     correct: '8',
     wrongtext: 'Nope, 1 + 7 = 8.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 7 = 8!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -199,7 +207,7 @@ const questions = [
     correct: '9',
     wrongtext: 'Nope, 1 + 8 = 9.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 8 = 9!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -208,7 +216,7 @@ const questions = [
     correct: '10',
     wrongtext: 'Nope, 1 + 9 = 10.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 9 = 10!',
     correctimage: './assets/images/correct.gif'
   },
   {
@@ -217,7 +225,7 @@ const questions = [
     correct: '11',
     wrongtext: 'Nope, 1 + 10 = 11.',
     wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 1 = 2!',
+    correcttext: 'Right! 1 + 10 = 11!',
     correctimage: './assets/images/correct.gif'
   }
 ]
