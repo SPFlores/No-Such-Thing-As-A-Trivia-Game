@@ -18,7 +18,6 @@ const shuffleQuestions = (a) => {
     a[i] = a[j]
     a[j] = x
   }
-  console.log('questions shufled')
   hereWeGo()
 }
 
@@ -88,24 +87,14 @@ const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   incorrectAnswerPage()
-  setTimeout(hereWeGo, 1000)
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
+  setTimeout(hereWeGo, 5000)
 }
 
 const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   correctAnswerPage()
-  setTimeout(hereWeGo, 1000)
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
-  // MAKE SURE TO CHANGE INTERVAL
+  setTimeout(hereWeGo, 5000)
 }
 
 const result = (clickedAnswer) => {
