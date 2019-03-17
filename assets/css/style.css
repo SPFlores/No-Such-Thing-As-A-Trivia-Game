@@ -28,6 +28,11 @@ body {
   display: none;
 }
 
+.questionImage {
+  margin: auto;
+  max-width: 300px;
+}
+
 .questionOption {
   display: block;
   margin: auto;
@@ -53,7 +58,7 @@ body {
   -o-transition: 0.25s;
 }
 
-#readyButton:hover {
+#readyButton:hover, #reset:hover {
   box-shadow: 0 5px slategray;
   transform: translateY(4px);
   transition: 0.5s;
@@ -63,19 +68,14 @@ body {
   -o-transition: 0.5s;
 }
 
-.questionImage {
-  margin: auto;
-  max-width: 300px;
-}
-
-#readyButton h5 {
+#readyButton h5, #reset h5 {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-#readyButton h5:after {
+#readyButton h5:after, #reset h5:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -84,36 +84,11 @@ body {
   transition: 0.5s;
 }
 
-#readyButton:hover h5 {
+#readyButton:hover h5, #reset:hover h5 {
   padding-right: 25px;
 }
 
-#readyButton:hover h5:after {
-  opacity: 1;
-  right: 0;
-}
-
-.questionOption h5 {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.questionOption h5:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.questionOption:hover h5 {
-  padding-right: 25px;
-}
-
-.questionOption:hover h5:after {
+#readyButton:hover h5:after, #reset:hover h5:after {
   opacity: 1;
   right: 0;
 }

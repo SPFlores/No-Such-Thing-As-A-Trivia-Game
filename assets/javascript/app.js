@@ -8,7 +8,6 @@ let timeleft,
 document.addEventListener('click', e => {
   if (e.target.classList.contains('questionOption')) {
     result(e.target.innerHTML)
-    console.log('button clicked')
   }
 })
 
@@ -128,7 +127,7 @@ const hereWeGo = _ => {
     for (let i = 0; i <= 3; i++) {
       let button = document.createElement('button')
       button.className = 'yellow accent-2 btn-large black-text z-depth-3 questionOption'
-      button.innerHTML = `<h5>${questions[questionCounter].options[i]} </h5>`
+      button.innerHTML = `${questions[questionCounter].options[i]}`
       document.querySelector('#answerChoices').append(button)
     }
   } else if (questionCounter === questions.length) {
