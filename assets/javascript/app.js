@@ -242,41 +242,42 @@ const questions = [
     wrongimage: `./assets/images/wrong.gif`,
     correcttext: `Hardcore axe throwing! After you had built a house in one day and sent smoke up the chimney, you could <a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank">throw an axe</a> from each corner of the house to claim the land as your own. Bet that made for some interesting neighborhoods, huh?`,
     correctimage: `./assets/images/correct.gif`
-  },
-  {
-    question: ``,
-    options: [``, ``, ``, ``],
-    correct: ``,
-    wrongtext: `<a href="" target="_blank"></a>`,
-    wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-    correctimage: `./assets/images/correct.gif`
-  },
-  {
-    question: ``,
-    options: [``, ``, ``, ``],
-    correct: ``,
-    wrongtext: `<a href="" target="_blank"></a>`,
-    wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-    correctimage: `./assets/images/correct.gif`
-  },
-  {
-    question: ``,
-    options: [``, ``, ``, ``],
-    correct: ``,
-    wrongtext: `<a href="" target="_blank"></a>`,
-    wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-    correctimage: `./assets/images/correct.gif`
-  },
-  {
-    question: ``,
-    options: [``, ``, ``, ``],
-    correct: ``,
-    wrongtext: `<a href="" target="_blank"></a>`,
-    wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-    correctimage: `./assets/images/correct.gif`
   }
+  // ,
+  // {
+  //   question: ``,
+  //   options: [``, ``, ``, ``],
+  //   correct: ``,
+  //   wrongtext: `<a href="" target="_blank"></a>`,
+  //   wrongimage: `./assets/images/wrong.gif`,
+  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+  //   correctimage: `./assets/images/correct.gif`
+  // },
+  // {
+  //   question: ``,
+  //   options: [``, ``, ``, ``],
+  //   correct: ``,
+  //   wrongtext: `<a href="" target="_blank"></a>`,
+  //   wrongimage: `./assets/images/wrong.gif`,
+  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+  //   correctimage: `./assets/images/correct.gif`
+  // },
+  // {
+  //   question: ``,
+  //   options: [``, ``, ``, ``],
+  //   correct: ``,
+  //   wrongtext: `<a href="" target="_blank"></a>`,
+  //   wrongimage: `./assets/images/wrong.gif`,
+  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+  //   correctimage: `./assets/images/correct.gif`
+  // },
+  // {
+  //   question: ``,
+  //   options: [``, ``, ``, ``],
+  //   correct: ``,
+  //   wrongtext: `<a href="" target="_blank"></a>`,
+  //   wrongimage: `./assets/images/wrong.gif`,
+  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+  //   correctimage: `./assets/images/correct.gif`
+  // }
 ]
