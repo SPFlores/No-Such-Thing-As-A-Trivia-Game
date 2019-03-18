@@ -93,6 +93,10 @@ const incorrectAnswerChosen = _ => {
   document.querySelector('#timer').innerHTML = ''
   incorrectAnswerPage()
   setTimeout(hereWeGo, 5000)
+  // REMEMBER TO FIX INTERVAL
+  // REMEMBER TO FIX INTERVAL
+  // REMEMBER TO FIX INTERVAL
+  // REMEMBER TO FIX INTERVAL
 }
 
 const correctAnswerChosen = _ => {
@@ -100,6 +104,10 @@ const correctAnswerChosen = _ => {
   document.querySelector('#timer').innerHTML = ''
   correctAnswerPage()
   setTimeout(hereWeGo, 5000)
+  // REMEMBER TO FIX INTERVAL
+  // REMEMBER TO FIX INTERVAL
+  // REMEMBER TO FIX INTERVAL
+  // REMEMBER TO FIX INTERVAL
 }
 
 const result = (clickedAnswer) => {
@@ -115,7 +123,7 @@ const hereWeGo = _ => {
     timeleft = 300
     questionTimer = setInterval(function () {
       if ((timeleft > 0)) {
-        document.querySelector('#timer').innerHTML = `<h4>You have ${(Math.ceil(timeleft / 10))} seconds left to answer`
+        document.querySelector('#timer').innerHTML = `<h5>You have ${(Math.ceil(timeleft / 10))} seconds left to answer</h5>`
       } else if (timeleft === 0) {
         clearInterval(questionTimer)
         document.querySelector('#answerChoices').innerHTML = ''
@@ -242,42 +250,41 @@ const questions = [
     wrongimage: `./assets/images/wrong.gif`,
     correcttext: `Hardcore axe throwing! After you had built a house in one day and sent smoke up the chimney, you could <a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank">throw an axe</a> from each corner of the house to claim the land as your own. Bet that made for some interesting neighborhoods, huh?`,
     correctimage: `./assets/images/correct.gif`
+  },
+  {
+    question: `Officials have seen an uptick in cocaine being smuggled into the US by what vehicle?`,
+    options: [`submarine`, `tank`, `airplane`, `car`],
+    correct: `submarine`,
+    wrongtext: `<a href="" target="_blank"></a>`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correctimage: `./assets/images/correct.gif`
+  },
+  {
+    question: ``,
+    options: [``, ``, ``, ``],
+    correct: ``,
+    wrongtext: `<a href="" target="_blank"></a>`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correctimage: `./assets/images/correct.gif`
+  },
+  {
+    question: ``,
+    options: [``, ``, ``, ``],
+    correct: ``,
+    wrongtext: `<a href="" target="_blank"></a>`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correctimage: `./assets/images/correct.gif`
+  },
+  {
+    question: ``,
+    options: [``, ``, ``, ``],
+    correct: ``,
+    wrongtext: `<a href="" target="_blank"></a>`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correctimage: `./assets/images/correct.gif`
   }
-  // ,
-  // {
-  //   question: ``,
-  //   options: [``, ``, ``, ``],
-  //   correct: ``,
-  //   wrongtext: `<a href="" target="_blank"></a>`,
-  //   wrongimage: `./assets/images/wrong.gif`,
-  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-  //   correctimage: `./assets/images/correct.gif`
-  // },
-  // {
-  //   question: ``,
-  //   options: [``, ``, ``, ``],
-  //   correct: ``,
-  //   wrongtext: `<a href="" target="_blank"></a>`,
-  //   wrongimage: `./assets/images/wrong.gif`,
-  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-  //   correctimage: `./assets/images/correct.gif`
-  // },
-  // {
-  //   question: ``,
-  //   options: [``, ``, ``, ``],
-  //   correct: ``,
-  //   wrongtext: `<a href="" target="_blank"></a>`,
-  //   wrongimage: `./assets/images/wrong.gif`,
-  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-  //   correctimage: `./assets/images/correct.gif`
-  // },
-  // {
-  //   question: ``,
-  //   options: [``, ``, ``, ``],
-  //   correct: ``,
-  //   wrongtext: `<a href="" target="_blank"></a>`,
-  //   wrongimage: `./assets/images/wrong.gif`,
-  //   correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
-  //   correctimage: `./assets/images/correct.gif`
-  // }
 ]
