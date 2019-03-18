@@ -171,16 +171,16 @@ const questions = [
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: `Which of these is NOT the name of a Japanese rock band?`,
+    question: `Which of these is <b>NOT</b> the name of a Japanese rock band?`,
     options: [`Abingdon Boys School`, `Mass of the Fermenting Dregs`, `Seagull Screaming Kiss Her Kiss Her`, `The String Cheese Incident`],
     correct: `The String Cheese Incident`,
-    wrongtext: `The only one of these that is wrong is 'The String Cheese Incident.' The rest are actual band names in Japan, though 'THe String CHeese INcident' is an actual band from Colorado. You can find more strange Japanese band names <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">here</a>.`,
+    wrongtext: `The only one of these that is wrong is 'The String Cheese Incident.' The rest are actual band names in Japan, though 'The String Cheese Incident' is an actual band from Colorado. You can find more strange Japanese band names <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">here</a>.`,
     wrongimage: `./assets/images/wrong.gif`,
     correcttext: `Correct, 'The String Cheese Incident' is actually from Colorado. If you want to learn more about strange Japanese band names, check out <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">this</a> list.`,
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: `Which of these is a species of the <I>Pieza</i> genus of fly?`,
+    question: `Which of these is a species of the <i>Pieza</i> genus of fly?`,
     options: [`Pieza lunulata`, `Pieza pi`, `Pieza rudis`, `Pieza tabanidae`],
     correct: `Pieza pi`,
     wrongtext: `Actually, that's not true. <i>Pieza kake</i>, <i>Pieza pi</i>, <i>Pieza rhea</i>, and <i>Pieza deresistans</i> are all species of the <i>Pieza</i> genus. Some funny names, right? Check them all out <a href="https://en.wikipedia.org/wiki/Pieza" target="_blank">here</a>.`,
@@ -252,12 +252,12 @@ const questions = [
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: `Officials have seen an uptick in cocaine being smuggled into the US by what vehicle?`,
+    question: `Officials have seen up to 30% of cocaine in the United States being smuggled into the country by what vehicle?`,
     options: [`submarine`, `tank`, `airplane`, `car`],
     correct: `submarine`,
-    wrongtext: `<a href="" target="_blank"></a>`,
+    wrongtext: `Submarines have started to become a huge part of the narative when talking about how drugs enter the United States, especially cocaine. So called <a href="https://www.usatoday.com/story/news/nation-now/2017/12/11/u-s-coast-guard-intercepts-semi-submersible-vessel-packed-3-800-pounds-cocaine/939668001/" target="_blank">"narco subs"</a> have been seen more and more frequently in waters around the US, and multiple have been intercepted by the Coast Guard.`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correcttext: `Many homemade submarine-like vehicles are now bringing cocaine and other drugs into the United States. These <a href="https://www.usatoday.com/story/news/nation-now/2017/12/11/u-s-coast-guard-intercepts-semi-submersible-vessel-packed-3-800-pounds-cocaine/939668001/" target="_blank">"narco subs"</a>, as they are called, have been found with thousands of pounds of cacaine in them floating through America's border waters.`,
     correctimage: `./assets/images/correct.gif`
   },
   {
@@ -266,7 +266,7 @@ const questions = [
     correct: ``,
     wrongtext: `<a href="" target="_blank"></a>`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correcttext: `<a href="" target="_blank"></a>`,
     correctimage: `./assets/images/correct.gif`
   },
   {
@@ -275,7 +275,7 @@ const questions = [
     correct: ``,
     wrongtext: `<a href="" target="_blank"></a>`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correcttext: `<a href="" target="_blank"></a>`,
     correctimage: `./assets/images/correct.gif`
   },
   {
@@ -284,7 +284,7 @@ const questions = [
     correct: ``,
     wrongtext: `<a href="" target="_blank"></a>`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank"></a>`,
+    correcttext: `<a href="" target="_blank"></a>`,
     correctimage: `./assets/images/correct.gif`
   }
 ]
