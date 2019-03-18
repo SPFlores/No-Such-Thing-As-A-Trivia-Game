@@ -4,8 +4,10 @@ body {
 
 .gameArea {
   margin-top: 35px;
+  margin-bottom: 35px;
   padding: 20px;
-  min-height: 750px;
+  padding-bottom: 55px;
+  /* min-height: 750px; */
 }
 
 #questionRow {

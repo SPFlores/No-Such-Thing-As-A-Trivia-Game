@@ -45,7 +45,9 @@ const clearAnswerChoices = _ => {
 }
 
 const incorrectAnswerPage = _ => {
-  document.querySelector('#question').textContent = questions[questionCounter].wrongtext
+  document.querySelector('#question').innerHTML = `
+  ${questions[questionCounter].wrongtext}
+  `
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].wrongimage}" alt="incorrect answer picture" class="questionImage">
   `
@@ -54,7 +56,9 @@ const incorrectAnswerPage = _ => {
 }
 
 const correctAnswerPage = _ => {
-  document.querySelector('#question').textContent = questions[questionCounter].correcttext
+  document.querySelector('#question').innerHTML = `
+  ${questions[questionCounter].correcttext}
+  `
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].correctimage}" alt="correct answer image" class="questionImage">
   `
@@ -63,7 +67,7 @@ const correctAnswerPage = _ => {
 }
 
 const noAnswerPage = _ => {
-  document.querySelector('#question').textContent = `You didn't answer this one! Couldn't make up your mind? That's okay. ${questions[questionCounter].correcttext}`
+  document.querySelector('#question').innerHTML = `You didn't answer this one! Couldn't make up your mind? That's alright! ${questions[questionCounter].correcttext}`
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].wrongimage}" alt="no answer image" class="questionImage">
   `
@@ -126,7 +130,7 @@ const hereWeGo = _ => {
     shuffle(questions[questionCounter].options)
     for (let i = 0; i <= 3; i++) {
       let button = document.createElement('button')
-      button.className = 'yellow accent-2 btn-large black-text z-depth-3 questionOption'
+      button.className = 'yellow accent-2 btn-large black-text z-depth-3 questionOption flow-text'
       button.innerHTML = `${questions[questionCounter].options[i]}`
       document.querySelector('#answerChoices').append(button)
     }
@@ -149,93 +153,93 @@ const reset = _ => {
 
 const questions = [
   {
-    question: '1 + 1 = ?',
-    options: ['3', '11', '1', '2'],
-    correct: '2',
-    wrongtext: 'Nope, 1 + 1 = 2.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: `Right! 1 + 1 = 2!`,
-    correctimage: './assets/images/correct.gif'
+    question: `In 1998, Singapore held a beauty contest where a portion of the judging was based on how good a contestants website was. What percentage of the total points did this account for?`,
+    options: [`60%`, `90%`, `10%`, `40%`],
+    correct: `60%`,
+    wrongtext: `60% of marks were awarded for having a good website. Stella Tan, 23, was eventually named Singapore's first Miss Internet in a brains-and-beauty pageant that put high importance on technological knowledge. A new article about the competition can be found <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a>.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Correct! 60% of the judging marks were awarded for Internet knowledge, 20% for confidence and interview skills, and 20% for looks and appearance. 23 year old Stella Tan, a master's student in Genetic Engineering, was eventually crowned the winner in Singapore's first ever Miss Internet competition. Go <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a> to learn more.`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 2 = ?',
-    options: ['3', '11', '1', '2'],
-    correct: '3',
-    wrongtext: 'Nope, 1 + 2 = 3.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 2 = 3!',
-    correctimage: './assets/images/correct.gif'
+    question: `Which of these is NOT the name of a Japanese rock band?`,
+    options: [`Abingdon Boys School`, `Mass of the Fermenting Dregs`, `Seagull Screaming Kiss Her Kiss Her`, `The String Cheese Incident`],
+    correct: `The String Cheese Incident`,
+    wrongtext: `The only one of these that is wrong is 'The String Cheese Incident.' The rest are actual band names in Japan, though 'THe String CHeese INcident' is an actual band from Colorado. You can find more strange Japanese band names <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">here</a>.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Correct, 'The String Cheese Incident' is actually from Colorado. If you want to learn more about strange Japanese band names, check out <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">this</a> list.`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 3 = ?',
-    options: ['3', '11', '4', '2'],
-    correct: '4',
-    wrongtext: 'Nope, 1 + 3 = 4.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 3 = 4!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 3 = ?`,
+    options: [`3`, `11`, `4`, `2`],
+    correct: `4`,
+    wrongtext: `Nope, 1 + 3 = 4.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 3 = 4!`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 4 = ?',
-    options: ['3', '11', '1', '5'],
-    correct: '5',
-    wrongtext: 'Nope, 1 + 4 = 5.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 4 = 5!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 4 = ?`,
+    options: [`3`, `11`, `1`, `5`],
+    correct: `5`,
+    wrongtext: `Nope, 1 + 4 = 5.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 4 = 5!`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 5 = ?',
-    options: ['3', '6', '1', '2'],
-    correct: '6',
-    wrongtext: 'Nope, 1 + 5 = 6.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 5 = 6!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 5 = ?`,
+    options: [`3`, `6`, `1`, `2`],
+    correct: `6`,
+    wrongtext: `Nope, 1 + 5 = 6.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 5 = 6!`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 6 = ?',
-    options: ['7', '11', '1', '2'],
-    correct: '7',
-    wrongtext: 'Nope, 1 + 6 = 7.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 6 = 7!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 6 = ?`,
+    options: [`7`, `11`, `1`, `2`],
+    correct: `7`,
+    wrongtext: `Nope, 1 + 6 = 7.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 6 = 7!`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 7 = ?',
-    options: ['3', '8', '1', '2'],
-    correct: '8',
-    wrongtext: 'Nope, 1 + 7 = 8.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 7 = 8!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 7 = ?`,
+    options: [`3`, `8`, `1`, `2`],
+    correct: `8`,
+    wrongtext: `Nope, 1 + 7 = 8.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 7 = 8!`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 8 = ?',
-    options: ['3', '11', '1', '9'],
-    correct: '9',
-    wrongtext: 'Nope, 1 + 8 = 9.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 8 = 9!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 8 = ?`,
+    options: [`3`, `11`, `1`, `9`],
+    correct: `9`,
+    wrongtext: `Nope, 1 + 8 = 9.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 8 = 9!`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 9 = ?',
-    options: ['3', '10', '1', '2'],
-    correct: '10',
-    wrongtext: 'Nope, 1 + 9 = 10.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 9 = 10!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 9 = ?`,
+    options: [`3`, `10`, `1`, `2`],
+    correct: `10`,
+    wrongtext: `Nope, 1 + 9 = 10.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 9 = 10!`,
+    correctimage: `./assets/images/correct.gif`
   },
   {
-    question: '1 + 10 = ?',
-    options: ['3', '11', '1', '2'],
-    correct: '11',
-    wrongtext: 'Nope, 1 + 10 = 11.',
-    wrongimage: './assets/images/wrong.gif',
-    correcttext: 'Right! 1 + 10 = 11!',
-    correctimage: './assets/images/correct.gif'
+    question: `1 + 10 = ?`,
+    options: [`3`, `11`, `1`, `2`],
+    correct: `11`,
+    wrongtext: `Nope, 1 + 10 = 11.`,
+    wrongimage: `./assets/images/wrong.gif`,
+    correcttext: `Right! 1 + 10 = 11!`,
+    correctimage: `./assets/images/correct.gif`
   }
 ]
