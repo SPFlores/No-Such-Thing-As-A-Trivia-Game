@@ -32,7 +32,6 @@
 
     <div class="row" id="instructions">
       <div class="col s12 m12 l12 xl12">
-        <!-- shows on page load then is taken away dynamically when the player clicks the Ready Button -->
         <h5>Welcome to another episode of No Such Thing As A Trivia Game! My name is Dan Schreiber. Today we have 10
           questions for you to answer. In no particular order, here we go.</h5>
       </div>
@@ -40,8 +39,9 @@
 
     <div class="row" id="buttons">
       <div class="col s12 m12 l12 xl12">
-        <button onclick="shuffleQuestions(questions)" id="readyButton" class="yellow accent-2 btn-large black-text"><h5>Here we go! </h5></button>
-        <button onclick="reset()" id="reset" class="yellow accent-2 btn-large black-text"><h5>Reset </h5></button>
+        <button onclick="shuffleQuestions(questions)" id="readyButton" class="yellow accent-2 btn-large black-text">
+          <h5>Here we go! </h5>
+        </button>
       </div>
     </div>
 
@@ -60,12 +60,28 @@
     <div class="row" id="resultsRow">
       <div class="col s12 m12 l12 xl12">
         <div id="results"></div>
+        <button onclick="reset()" id="reset" class="yellow accent-2 btn-large black-text">
+          <h5>Reset </h5>
+        </button>
+      </div>
+    </div>
+
+    <div class="row" id="moreInfoRow">
+      <div class="col s12 m12 l12 xl12">
+        <div id="moreInfo">
+          <h5>Did you enjoy these facts but want to know more? Do you want to learn random and sometimes useless trivia
+            from four British people? Do you struggle to find something to listen to on your drive to work? To solve
+            these and many more of your problems, try listening to <a href="https://www.nosuchthingasafish.com/">No Such
+              Thing As A Fish</a>, a weekly podcast hosted by the QI Elves!</h5>
+          <h6>Disclaimer: No Such Thing As A Fish and the creator of this game will not be held responsible for solving
+            all of your problems. Unfortunately, you're on your own for that.</h6>
+        </div>
       </div>
     </div>
 
   </div>
 
-<a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a>
+  <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./assets/javascript/app.js"></script>

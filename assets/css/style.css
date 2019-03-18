@@ -30,6 +30,11 @@ body {
   display: none;
 }
 
+#moreInfoRow {
+  display: none;
+  margin-top: 10px;
+}
+
 .questionImage {
   margin: auto;
   max-width: 250px;

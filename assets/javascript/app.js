@@ -79,12 +79,13 @@ const finalPage = _ => {
   document.querySelector('#answersRow').style.display = 'none'
   document.querySelector('#resultsRow').style.display = 'inline'
   document.querySelector('#results').innerHTML = `
-  <h3>Questions correct: ${correctlyAnswered}</h3>
-  <h3>Questions wrong: ${incorrectlyAnswered}</h3>
-  <h3>You took ${timeTaken / 10} seconds to complete this quiz.</h3>
-  <h2>Play again?</h2>
+  <h4>Questions correct: ${correctlyAnswered}</h4>
+  <h4>Questions wrong: ${incorrectlyAnswered}</h4>
+  <h4>You took ${timeTaken / 10} seconds to complete this quiz.</h4>
+  <h3>Play again?</h3>
   `
   document.querySelector('#reset').style.display = 'inline'
+  document.querySelector('#moreInfoRow').style.display = 'inline'
 }
 
 const incorrectAnswerChosen = _ => {
@@ -114,7 +115,7 @@ const hereWeGo = _ => {
     timeleft = 300
     questionTimer = setInterval(function () {
       if ((timeleft > 0)) {
-        document.querySelector('#timer').innerHTML = 'You have ' + (Math.ceil(timeleft / 10)) + ' seconds left to answer'
+        document.querySelector('#timer').innerHTML = `<h4>You have ${(Math.ceil(timeleft / 10))} seconds left to answer`
       } else if (timeleft === 0) {
         clearInterval(questionTimer)
         document.querySelector('#answerChoices').innerHTML = ''
