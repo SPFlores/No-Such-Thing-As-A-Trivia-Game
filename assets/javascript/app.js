@@ -1,6 +1,7 @@
 let questionCounter = 0
 let correctlyAnswered = 0
 let incorrectlyAnswered = 0
+let failedToAnswer = 0
 let timeTaken = 0
 let timeleft,
   questionTimer
@@ -67,10 +68,34 @@ const correctAnswerPage = _ => {
 }
 
 const noAnswerPage = _ => {
+  setTimeout(hereWeGo, 5000)
+  document.querySelector('#timer').innerHTML = ''
   document.querySelector('#question').innerHTML = `You didn't answer this one! Couldn't make up your mind? That's alright! ${questions[questionCounter].correcttext}`
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].wrongimage}" alt="no answer image" class="questionImage">
   `
+  failedToAnswer++
+  questionCounter++
+}
+
+const timeConvert = (timeTaken) => {
+  let seconds = parseInt(timeTaken / 10)
+  let hours = parseInt(seconds / 3600)
+  let minutes = parseInt(seconds / 60)
+  seconds = seconds % 3600
+  seconds = seconds % 60
+  if (hours <= 0) {
+    if (minutes <= 0) {
+      return (seconds + ' 1 seconds')
+      console.log('<= 0')
+    } else {
+      return (minutes + ' minutes ' + seconds + ' 2 seconds')
+      console.log('else')
+    }
+  } else {
+    return (hours + ' hours ' + minutes + ' minutes ' + seconds + ' 3 seconds')
+    console.log('hours else')
+  }
 }
 
 const finalPage = _ => {
@@ -81,8 +106,9 @@ const finalPage = _ => {
   document.querySelector('#results').innerHTML = `
   <h4>Questions correct: ${correctlyAnswered}</h4>
   <h4>Questions wrong: ${incorrectlyAnswered}</h4>
-  <h4>You took ${timeTaken / 10} seconds to complete this quiz.</h4>
-  <h3>Play again?</h3>
+  <h4>Questions not answered: ${failedToAnswer}</h4>
+  <h4>You took ${timeConvert(timeTaken)} seconds to complete this quiz.</h4>
+  <h4>Play again?</h4>
   `
   document.querySelector('#reset').style.display = 'inline'
   document.querySelector('#moreInfoRow').style.display = 'inline'
@@ -156,6 +182,7 @@ const reset = _ => {
   questionCounter = 0
   correctlyAnswered = 0
   incorrectlyAnswered = 0
+  failedToAnswer = 0
   timeTaken = 0
   shuffleQuestions(questions)
 }
@@ -167,7 +194,7 @@ const questions = [
     correct: `60%`,
     wrongtext: `60% of marks were awarded for having a good website. Stella Tan, 23, was eventually named Singapore's first Miss Internet in a brains-and-beauty pageant that put high importance on technological knowledge. A new article about the competition can be found <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a>.`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `Correct! 60% of the judging marks were awarded for Internet knowledge, 20% for confidence and interview skills, and 20% for looks and appearance. 23 year old Stella Tan, a master's student in Genetic Engineering, was eventually crowned the winner in Singapore's first ever Miss Internet competition. Go <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a> to learn more.`,
+    correcttext: `60% of the judging marks were awarded for Internet knowledge, 20% for confidence and interview skills, and 20% for looks and appearance. 23 year old Stella Tan, a master's student in Genetic Engineering, was eventually crowned the winner in Singapore's first ever Miss Internet competition. Go <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a> to learn more.`,
     correctimage: `./assets/images/correct.gif`
   },
   {
@@ -176,7 +203,7 @@ const questions = [
     correct: `The String Cheese Incident`,
     wrongtext: `The only one of these that is wrong is 'The String Cheese Incident.' The rest are actual band names in Japan, though 'The String Cheese Incident' is an actual band from Colorado. You can find more strange Japanese band names <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">here</a>.`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `Correct, 'The String Cheese Incident' is actually from Colorado. If you want to learn more about strange Japanese band names, check out <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">this</a> list.`,
+    correcttext: `'The String Cheese Incident' is actually from Colorado. If you want to learn more about strange Japanese band names, check out <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">this</a> list.`,
     correctimage: `./assets/images/correct.gif`
   },
   {
