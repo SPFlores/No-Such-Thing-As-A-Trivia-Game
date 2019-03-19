@@ -2,6 +2,22 @@ body {
   font-family: 'Reem Kufi', sans-serif;
 }
 
+a:link {
+  color: #ffff00
+}
+
+a:visited {
+  color: #2d69b1
+}
+
+a:hover {
+  color: #ffab00
+}
+
+a:active {
+  color: #424242
+}
+
 button {
   margin-top: 15px;
   line-height: 30px;
@@ -60,10 +76,6 @@ h5 {
   -o-border-radius: 8px;
 }
 
-#readyButton {
-  font-size: 10px;
-}
-
 .questionOption:hover {
   box-shadow: 0 5px slategray;
   transform: translateY(4px);
@@ -107,6 +119,10 @@ h5 {
 #readyButton:hover h5:after, #reset:hover h5:after {
   opacity: 1;
   right: 0;
+}
+
+#reset {
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 980px) and (min-width: 768px) {}

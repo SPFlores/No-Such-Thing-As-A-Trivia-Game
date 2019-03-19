@@ -46,7 +46,7 @@ const clearAnswerChoices = _ => {
 }
 
 const incorrectAnswerPage = _ => {
-  // document.querySelector('#timer').innerHTML = `Incorrect!`
+  document.querySelector('#timer').innerHTML = `<h5>Incorrect!</h5>`
 
   document.querySelector('#question').innerHTML = `
   ${questions[questionCounter].wrongtext}
@@ -59,7 +59,7 @@ const incorrectAnswerPage = _ => {
 }
 
 const correctAnswerPage = _ => {
-  // document.querySelector('#timer').innerHTML = `Correct!`
+  document.querySelector('#timer').innerHTML = `<h5>Correct!</h5>`
 
   document.querySelector('#question').innerHTML = `
   ${questions[questionCounter].correcttext}
@@ -73,7 +73,7 @@ const correctAnswerPage = _ => {
 
 const noAnswerPage = _ => {
   setTimeout(hereWeGo, 5000)
-  // document.querySelector('#timer').innerHTML = `You didn't answer this one! Couldn't make up your mind?`
+  document.querySelector('#timer').innerHTML = `<h5>You didn't answer this one! Couldn't make up your mind?</h5`
   document.querySelector('#question').innerHTML = `${questions[questionCounter].correcttext}`
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].wrongimage}" alt="no answer image" class="questionImage">
@@ -119,7 +119,7 @@ const incorrectAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   incorrectAnswerPage()
-  setTimeout(hereWeGo, 5000)
+  setTimeout(hereWeGo, 9000)
   // REMEMBER TO FIX INTERVAL
   // REMEMBER TO FIX INTERVAL
   // REMEMBER TO FIX INTERVAL
@@ -130,7 +130,7 @@ const correctAnswerChosen = _ => {
   clearInterval(questionTimer)
   document.querySelector('#timer').innerHTML = ''
   correctAnswerPage()
-  setTimeout(hereWeGo, 5000)
+  setTimeout(hereWeGo, 9000)
   // REMEMBER TO FIX INTERVAL
   // REMEMBER TO FIX INTERVAL
   // REMEMBER TO FIX INTERVAL
