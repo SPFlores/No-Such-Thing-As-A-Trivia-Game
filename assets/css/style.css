@@ -4,6 +4,7 @@ body {
 
 button {
   margin-top: 15px;
+  line-height: 30px;
 }
 
 .gameArea {
@@ -42,7 +43,7 @@ button {
 .questionImage {
   margin: auto;
   max-width: 250px;
-  margin-top: 25pxpx;
+  margin-top: 25px;
 }
 
 .questionOption {
@@ -103,4 +104,15 @@ button {
 #readyButton:hover h5:after, #reset:hover h5:after {
   opacity: 1;
   right: 0;
+}
+
+@media only screen and (max-width: 980px) and (min-width: 768px) {}
+
+@media only screen and (max-width: 768px) and (min-width: 640px) {}
+
+@media only screen and (max-width: 640px) {
+  button {
+    font-size: 10px;
+    line-height: 35px;
+  }
 }
