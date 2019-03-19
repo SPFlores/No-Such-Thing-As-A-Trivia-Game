@@ -2,6 +2,10 @@ body {
   font-family: 'Reem Kufi', sans-serif;
 }
 
+button {
+  margin-top: 15px;
+}
+
 .gameArea {
   margin-top: 25px;
   margin-bottom: 25px;
