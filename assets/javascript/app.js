@@ -180,12 +180,12 @@ const questions = [
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: `Which of these is a species of the <i>Pieza</i> genus of fly?`,
+    question: `Which of these is a species of the Pieza genus of fly?`,
     options: [`Pieza lunulata`, `Pieza pi`, `Pieza rudis`, `Pieza tabanidae`],
     correct: `Pieza pi`,
-    wrongtext: `Actually, that's not true. <i>Pieza kake</i>, <i>Pieza pi</i>, <i>Pieza rhea</i>, and <i>Pieza deresistans</i> are all species of the <i>Pieza</i> genus. Some funny names, right? Check them all out <a href="https://en.wikipedia.org/wiki/Pieza" target="_blank">here</a>.`,
+    wrongtext: `Actually, that's not true. Pieza kake, Pieza pi, Pieza rhea, and Pieza deresistans are all species of the Pieza genus. Some funny names, right? Check them all out <a href="https://en.wikipedia.org/wiki/Pieza" target="_blank">here</a>.`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<i>Pieza kake</i>, <i>Pieza pi</i>, <i>Pieza rhea</i>, and <i>Pieza deresistans</i> are all species of the <i>Pieza</i> genus of fly. That's science humor for you. Check them all out <a href="https://en.wikipedia.org/wiki/Pieza" target="_blank">here</a>.`,
+    correcttext: `Pieza kake, Pieza pi, Pieza rhea, and Pieza deresistans are all species of the Pieza genus of fly. That's science humor for you. Check them all out <a href="https://en.wikipedia.org/wiki/Pieza" target="_blank">here</a>.`,
     correctimage: `./assets/images/correct.gif`
   },
   {

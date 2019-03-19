@@ -3,11 +3,11 @@ body {
 }
 
 .gameArea {
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   padding: 20px;
-  padding-bottom: 55px;
-  /* min-height: 750px; */
+  padding-bottom: 45px;
+  min-height: 750px;
 }
 
 #questionRow {
@@ -38,6 +38,7 @@ body {
 .questionImage {
   margin: auto;
   max-width: 250px;
+  margin-top: 15px;
 }
 
 .questionOption {
