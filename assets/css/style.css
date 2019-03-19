@@ -111,8 +111,11 @@ button {
 @media only screen and (max-width: 768px) and (min-width: 640px) {}
 
 @media only screen and (max-width: 640px) {
-  button {
-    font-size: 100px;
-    line-height: 35px;
+  #readyButton {
+    font-size: 10px;
+  }
+
+  .questionOption {
+    font-size: 10px;
   }
 }
