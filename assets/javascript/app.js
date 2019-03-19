@@ -46,6 +46,8 @@ const clearAnswerChoices = _ => {
 }
 
 const incorrectAnswerPage = _ => {
+  // document.querySelector('#timer').innerHTML = `Incorrect!`
+
   document.querySelector('#question').innerHTML = `
   ${questions[questionCounter].wrongtext}
   `
@@ -57,6 +59,8 @@ const incorrectAnswerPage = _ => {
 }
 
 const correctAnswerPage = _ => {
+  // document.querySelector('#timer').innerHTML = `Correct!`
+
   document.querySelector('#question').innerHTML = `
   ${questions[questionCounter].correcttext}
   `
@@ -69,8 +73,8 @@ const correctAnswerPage = _ => {
 
 const noAnswerPage = _ => {
   setTimeout(hereWeGo, 5000)
-  document.querySelector('#timer').innerHTML = ''
-  document.querySelector('#question').innerHTML = `You didn't answer this one! Couldn't make up your mind? That's alright! ${questions[questionCounter].correcttext}`
+  // document.querySelector('#timer').innerHTML = `You didn't answer this one! Couldn't make up your mind?`
+  document.querySelector('#question').innerHTML = `${questions[questionCounter].correcttext}`
   document.querySelector('#answerChoices').innerHTML = `
   <img src="${questions[questionCounter].wrongimage}" alt="no answer image" class="questionImage">
   `
@@ -88,7 +92,7 @@ const timeConvert = (timeTaken) => {
     if (minutes <= 0) {
       return (seconds + ' seconds')
     } else if (minutes > 0) {
-      return (minutes + ' minutes and' + seconds + ' seconds')
+      return (minutes + ' minutes and ' + seconds + ' seconds')
     }
   } else if (hours > 0) {
     return (hours + ' hours ' + minutes + ' minutes and ' + seconds + ' seconds')
@@ -304,7 +308,7 @@ const questions = [
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: `Who is close personal friends with both Donald Trump and Kim Jong Un?`,
+    question: `Who is a close personal friend with both Donald Trump and Kim Jong Un?`,
     options: [`Dennis Rodman`, `Troy Bolton`, `Angela Merkel`, `Hugh Jackman`],
     correct: `Dennis Rodman`,
     wrongtext: `The former basketball star Dennis Rodman is very close friends with both leaders. In fact, in 2018 he offered to travel to the historic summit between the two politicians to support <a href="https://www.nbclosangeles.com/news/national-international/Dennis-Rodman-Trump-Kim-Summit-484962131.html" target="_blank">both his friends</a> if needed. Unfortunately for his travel plans, Rodman was not invited by either party.`,
