@@ -271,11 +271,11 @@ const questions = [
   },
   {
     question: `By the number of tires made, what company was the biggest tire manufacturer in the world in 2011?`,
-    options: [`LEGO`, `Goodyear`, `Michelin`, `Bridgestone`],
-    correct: `LEGO`,
-    wrongtext: `The toy company <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">LEGO</a> is actually the biggest! They produce more than 50% more tires than any other company. Who says small can't be mighty?`,
+    options: [`Lego`, `Goodyear`, `Michelin`, `Bridgestone`],
+    correct: `Lego`,
+    wrongtext: `The toy company <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">Lego</a> is actually the biggest! They produce more than 50% more tires than any other company. Who says small can't be mighty?`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `Even though they're smaller than any other company's, <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">LEGO tires</a> were the most produced in 2011. In fact, they produced over 50% more tires than any other company that year!`,
+    correcttext: `Even though they're smaller than any other company's, <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">Lego tires</a> were the most produced in 2011. In fact, they produced over 50% more tires than any other company that year!`,
     correctimage: `./assets/images/correct.gif`
   },
   {
