@@ -7,6 +7,14 @@ button {
   line-height: 30px;
 }
 
+h5 {
+  margin-top: 0.85rem;
+}
+
+#title {
+  font-size: 47px;
+}
+
 .gameArea {
   margin-top: 25px;
   margin-bottom: 25px;
@@ -15,15 +23,11 @@ button {
   min-height: 750px;
 }
 
-#questionRow {
-  display: none;
-}
-
 #question {
   margin-bottom: 10px;
 }
 
-#answersRow {
+#resultsRow, #moreInfoRow, #reset, #answersRow, #questionRow {
   display: none;
 }
 
@@ -31,16 +35,7 @@ button {
   display: inline;
 }
 
-#reset {
-  display: none;
-}
-
-#resultsRow {
-  display: none;
-}
-
 #moreInfoRow {
-  display: none;
   margin-top: 10px;
 }
 
@@ -127,5 +122,8 @@ button {
     line-height: 15px;
     font-size: 10px;
     border: 1.5px solid white;
+  }
+  #title {
+    font-size: 32px;
   }
 }
