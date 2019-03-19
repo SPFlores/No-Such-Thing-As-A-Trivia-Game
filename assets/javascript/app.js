@@ -195,18 +195,18 @@ const questions = [
     options: [`60%`, `90%`, `10%`, `40%`],
     correct: `60%`,
     wrongtext: `60% of marks were awarded for having a good website. Stella Tan, 23, was eventually named Singapore's first Miss Internet in a brains-and-beauty pageant that put high importance on technological knowledge. A new article about the competition can be found <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a>.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/tech_diff.gif`,
     correcttext: `60% of the judging marks were awarded for Internet knowledge, 20% for confidence and interview skills, and 20% for looks and appearance. 23 year old Stella Tan, a master's student in Genetic Engineering, was eventually crowned the winner in Singapore's first ever Miss Internet competition. Go <a href="http://news.bbc.co.uk/2/hi/science/nature/156900.stm" target="_blank">here</a> to learn more.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/loading.gif`
   },
   {
     question: `Which of these is NOT the name of a Japanese rock band?`,
     options: [`Abingdon Boys School`, `Mass of the Fermenting Dregs`, `Seagull Screaming Kiss Her Kiss Her`, `The String Cheese Incident`],
     correct: `The String Cheese Incident`,
     wrongtext: `The only one of these that is wrong is 'The String Cheese Incident.' The rest are actual band names in Japan, though 'The String Cheese Incident' is an actual band from Colorado. You can find more strange Japanese band names <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">here</a>.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/japanese_band.gif`,
     correcttext: `'The String Cheese Incident' is actually from Colorado. If you want to learn more about strange Japanese band names, check out <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">this</a> list.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/string_cheese.gif`
   },
   {
     question: `Which of these is a species of the Pieza genus of fly?`,
