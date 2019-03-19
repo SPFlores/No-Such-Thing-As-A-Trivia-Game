@@ -171,7 +171,7 @@ const questions = [
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: `Which of these is <b>NOT</b> the name of a Japanese rock band?`,
+    question: `Which of these is NOT the name of a Japanese rock band?`,
     options: [`Abingdon Boys School`, `Mass of the Fermenting Dregs`, `Seagull Screaming Kiss Her Kiss Her`, `The String Cheese Incident`],
     correct: `The String Cheese Incident`,
     wrongtext: `The only one of these that is wrong is 'The String Cheese Incident.' The rest are actual band names in Japan, though 'The String Cheese Incident' is an actual band from Colorado. You can find more strange Japanese band names <a href="https://en.wikipedia.org/wiki/List_of_musical_artists_from_Japan" target="_blank">here</a>.`,
