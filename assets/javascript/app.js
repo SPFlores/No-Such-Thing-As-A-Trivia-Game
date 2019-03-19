@@ -139,7 +139,7 @@ const hereWeGo = _ => {
     shuffle(questions[questionCounter].options)
     for (let i = 0; i <= 3; i++) {
       let button = document.createElement('button')
-      button.className = 'yellow accent-2 btn-large black-text z-depth-3 questionOption'
+      button.className = 'yellow accent-2 btn-large black-text flow-text questionOption'
       button.innerHTML = `${questions[questionCounter].options[i]}`
       document.querySelector('#answerChoices').append(button)
     }
