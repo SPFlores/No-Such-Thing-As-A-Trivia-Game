@@ -88,7 +88,7 @@ const timeConvert = (timeTaken) => {
     if (minutes <= 0) {
       return (seconds + ' seconds')
     } else if (minutes > 0) {
-      return (minutes + ' minutes ' + seconds + ' seconds')
+      return (minutes + ' minutes and' + seconds + ' seconds')
     }
   } else if (hours > 0) {
     return (hours + ' hours ' + minutes + ' minutes and ' + seconds + ' seconds')
