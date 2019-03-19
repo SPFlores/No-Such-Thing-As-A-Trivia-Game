@@ -261,30 +261,30 @@ const questions = [
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: ``,
-    options: [``, ``, ``, ``],
-    correct: ``,
-    wrongtext: `<a href="" target="_blank"></a>`,
+    question: `In 2018 NASA sent an astronaut to the International Space Station who had which fear?`,
+    options: [`heights`, `spiders`, `space`, `flying`],
+    correct: `heights`,
+    wrongtext: `Rather ironically, he had a fear of <a href="https://www.cnet.com/news/nasa-astronaut-fear-of-heights-going-to-iss-space-station-anyway/" target="_blank">heights</a>! Drew Feustel was sent up to the ISS with a 'mild fear of heights,' though he claims it doesn't affect him once he's up in space. Apparently you really can do anything you set your mind to!`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="" target="_blank"></a>`,
+    correcttext: `Crazy to think that they sent a man with a 'mild fear of heights' up to the highest point any human can go, but <a href="https://www.cnet.com/news/nasa-astronaut-fear-of-heights-going-to-iss-space-station-anyway/" target="_blank">Drew Feustel</a> went. He claims that once in space the phobia doesn't affect him, even from the highest point humanity has reached.`,
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: ``,
-    options: [``, ``, ``, ``],
-    correct: ``,
-    wrongtext: `<a href="" target="_blank"></a>`,
+    question: `By the number of tires made, what company was the biggest tire manufacturer in the world in 2011?`,
+    options: [`LEGO`, `Goodyear`, `Michelin`, `Bridgestone`],
+    correct: `LEGO`,
+    wrongtext: `The toy company <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">LEGO</a> is actually the biggest! They produce more than 50% more tires than any other company. Who says small can't be mighty?`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="" target="_blank"></a>`,
+    correcttext: `Even though they're smaller than any other company's, <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">LEGO tires</a> were the most produced in 2011. In fact, they produced over 50% more tires than any other company that year!`,
     correctimage: `./assets/images/correct.gif`
   },
   {
-    question: ``,
-    options: [``, ``, ``, ``],
-    correct: ``,
-    wrongtext: `<a href="" target="_blank"></a>`,
+    question: `Who is close personal friends with both Donald Trump and Kim Jong Un?`,
+    options: [`Dennis Rodman`, `Troy Bolton`, `Angela Merkel`, `Hugh Jackman`],
+    correct: `Dennis Rodman`,
+    wrongtext: `The former basketball star Dennis Rodman is very close friends with both leaders. In fact, in 2018 he offered to travel to the historic summit between the two politicians to support <a href="https://www.nbclosangeles.com/news/national-international/Dennis-Rodman-Trump-Kim-Summit-484962131.html" target="_blank">both his friends</a> if needed. Unfortunately for his travel plans, Rodman was not invited by either party.`,
     wrongimage: `./assets/images/wrong.gif`,
-    correcttext: `<a href="" target="_blank"></a>`,
+    correcttext: `Dennis Rodman had previously offered to work as a <a href="https://www.nbclosangeles.com/news/national-international/Dennis-Rodman-Trump-Kim-Summit-484962131.html" target="_blank">negotiator</a> for the two world leaders when they met at a nuclear summit in 2018. His offer (made on Twitter, as all the best ones are) was later deleted and Rodman was never invited to the talks.`,
     correctimage: `./assets/images/correct.gif`
   }
 ]
