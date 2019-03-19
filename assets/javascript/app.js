@@ -86,15 +86,12 @@ const timeConvert = (timeTaken) => {
   seconds = seconds % 60
   if (hours <= 0) {
     if (minutes <= 0) {
-      return (seconds + ' 1 seconds')
-      console.log('<= 0')
-    } else {
-      return (minutes + ' minutes ' + seconds + ' 2 seconds')
-      console.log('else')
+      return (seconds + ' seconds')
+    } else if (minutes > 0) {
+      return (minutes + ' minutes ' + seconds + ' seconds')
     }
-  } else {
-    return (hours + ' hours ' + minutes + ' minutes ' + seconds + ' 3 seconds')
-    console.log('hours else')
+  } else if (hours > 0) {
+    return (hours + ' hours ' + minutes + ' minutes and ' + seconds + ' seconds')
   }
 }
 
@@ -107,7 +104,7 @@ const finalPage = _ => {
   <h4>Questions correct: ${correctlyAnswered}</h4>
   <h4>Questions wrong: ${incorrectlyAnswered}</h4>
   <h4>Questions not answered: ${failedToAnswer}</h4>
-  <h4>You took ${timeConvert(timeTaken)} seconds to complete this quiz.</h4>
+  <h4>You took ${timeConvert(timeTaken)} to complete this quiz.</h4>
   <h4>Play again?</h4>
   `
   document.querySelector('#reset').style.display = 'inline'
@@ -179,6 +176,7 @@ const reset = _ => {
   document.querySelector('#resultsRow').style.display = 'none'
   document.querySelector('#results').innerHTML = ''
   document.querySelector('#reset').style.display = 'none'
+  document.querySelector('#moreInfoRow').style.display = 'none'
   questionCounter = 0
   correctlyAnswered = 0
   incorrectlyAnswered = 0
