@@ -312,8 +312,8 @@ const questions = [
     options: [`Dennis Rodman`, `Troy Bolton`, `Angela Merkel`, `Hugh Jackman`],
     correct: `Dennis Rodman`,
     wrongtext: `The former basketball star Dennis Rodman is very close friends with both leaders. In fact, in 2018 he offered to travel to the historic summit between the two politicians to support <a href="https://www.nbclosangeles.com/news/national-international/Dennis-Rodman-Trump-Kim-Summit-484962131.html" target="_blank">both his friends</a> if needed. Unfortunately for his travel plans, Rodman was not invited by either party.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/lego_blocks.gif`,
     correcttext: `Dennis Rodman had previously offered to work as a <a href="https://www.nbclosangeles.com/news/national-international/Dennis-Rodman-Trump-Kim-Summit-484962131.html" target="_blank">negotiator</a> for the two world leaders when they met at a nuclear summit in 2018. His offer (made on Twitter, as all the best ones are) was later deleted and Rodman was never invited to the talks.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/lego_batman.gif`
   }
 ]
