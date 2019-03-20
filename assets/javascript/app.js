@@ -249,9 +249,9 @@ const questions = [
     options: [`Comic Sans`, `Times New Roman`, `Arial`, `Helvetica`],
     correct: `Comic Sans`,
     wrongtext: `To the horror of designers everywhere, it was released in Comic Sans. Even Comic Sans designer Vincent Connare said that it probably wasn't the best choice for this historic occasion. CERN even <a href="https://www.vietworldkitchen.com/blog/2018/03/the-history-of-pho.html" target="_blank">switched all of their communications</a> to the font for a while after the presentation.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/yes_comic_sans.gif`,
     correcttext: `It was released in Comic Sans, unfortunately. Even the designer of the font, Vincent Connare, said that it wasn't the best choice for the historic occasion. CERN <a href="https://www.vietworldkitchen.com/blog/2018/03/the-history-of-pho.html" target="_blank">switched all of their communications</a> to the font for a while after the presentation, though it was later revealed to be a prank.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/no_comic_sans.gif`
   },
   {
     question: `Aproximately how many rounds of golf did Woodrow Wilson play while in office?`,
