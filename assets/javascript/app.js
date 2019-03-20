@@ -303,17 +303,17 @@ const questions = [
     options: [`Lego`, `Goodyear`, `Michelin`, `Bridgestone`],
     correct: `Lego`,
     wrongtext: `The toy company <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">Lego</a> is actually the biggest! They produce more than 50% more tires than any other company. Who says small can't be mighty?`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/lego_blocks.gif`,
     correcttext: `Even though they're smaller than any other company's, <a href="https://en.wikipedia.org/wiki/Lego_tire" target="_blank">Lego tires</a> were the most produced in 2011. In fact, they produced over 50% more tires than any other company that year!`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/lego_batman.gif`
   },
   {
     question: `Who is a close personal friend with both Donald Trump and Kim Jong Un?`,
     options: [`Dennis Rodman`, `Troy Bolton`, `Angela Merkel`, `Hugh Jackman`],
     correct: `Dennis Rodman`,
     wrongtext: `The former basketball star Dennis Rodman is very close friends with both leaders. In fact, in 2018 he offered to travel to the historic summit between the two politicians to support <a href="https://www.nbclosangeles.com/news/national-international/Dennis-Rodman-Trump-Kim-Summit-484962131.html" target="_blank">both his friends</a> if needed. Unfortunately for his travel plans, Rodman was not invited by either party.`,
-    wrongimage: `./assets/images/lego_blocks.gif`,
+    wrongimage: `./assets/images/trump_wrong.gif`,
     correcttext: `Dennis Rodman had previously offered to work as a <a href="https://www.nbclosangeles.com/news/national-international/Dennis-Rodman-Trump-Kim-Summit-484962131.html" target="_blank">negotiator</a> for the two world leaders when they met at a nuclear summit in 2018. His offer (made on Twitter, as all the best ones are) was later deleted and Rodman was never invited to the talks.`,
-    correctimage: `./assets/images/lego_batman.gif`
+    correctimage: `./assets/images/nk_highfive.gif`
   }
 ]
