@@ -83,14 +83,14 @@ const noAnswerPage = _ => {
 }
 
 const timeConvert = (timeTaken) => {
-  let seconds = parseInt(timeTaken / 10)
+  let seconds = (timeTaken / 10)
   let hours = parseInt(seconds / 3600)
   let minutes = parseInt(seconds / 60)
   seconds = seconds % 3600
   seconds = seconds % 60
   if (hours <= 0) {
     if (minutes <= 0) {
-      return (seconds + ' seconds')
+      return (parseFloat(seconds) + ' seconds')
     } else if (minutes > 0) {
       return (minutes + ' minutes and ' + seconds + ' seconds')
     }
@@ -120,10 +120,6 @@ const incorrectAnswerChosen = _ => {
   document.querySelector('#timer').innerHTML = ''
   incorrectAnswerPage()
   setTimeout(hereWeGo, 9000)
-  // REMEMBER TO FIX INTERVAL
-  // REMEMBER TO FIX INTERVAL
-  // REMEMBER TO FIX INTERVAL
-  // REMEMBER TO FIX INTERVAL
 }
 
 const correctAnswerChosen = _ => {
@@ -131,10 +127,6 @@ const correctAnswerChosen = _ => {
   document.querySelector('#timer').innerHTML = ''
   correctAnswerPage()
   setTimeout(hereWeGo, 9000)
-  // REMEMBER TO FIX INTERVAL
-  // REMEMBER TO FIX INTERVAL
-  // REMEMBER TO FIX INTERVAL
-  // REMEMBER TO FIX INTERVAL
 }
 
 const result = (clickedAnswer) => {
@@ -250,7 +242,7 @@ const questions = [
     correct: `Comic Sans`,
     wrongtext: `To the horror of designers everywhere, it was released in Comic Sans. Even Comic Sans designer Vincent Connare said that it probably wasn't the best choice for this historic occasion. CERN even <a href="https://www.vietworldkitchen.com/blog/2018/03/the-history-of-pho.html" target="_blank">switched all of their communications</a> to the font for a while after the presentation.`,
     wrongimage: `./assets/images/yes_comic_sans.gif`,
-    correcttext: `It was released in Comic Sans, unfortunately. Even the designer of the font, Vincent Connare, said that it wasn't the best choice for the historic occasion. CERN <a href="https://www.vietworldkitchen.com/blog/2018/03/the-history-of-pho.html" target="_blank">switched all of their communications</a> to the font for a while after the presentation, though it was later revealed to be a prank.`,
+    correcttext: `It was released in Comic Sans, unfortunately. Even the designer of the font, Vincent Connare, said that it wasn't the best choice for the historic occasion. CERN <a href="https://www.vietworldkitchen.com/blog/2018/03/the-history-of-pho.html" target="_blank">switched all of their communications</a> to the font for a while after the presentation.`,
     correctimage: `./assets/images/no_comic_sans.gif`
   },
   {
@@ -266,7 +258,7 @@ const questions = [
     question: `What are Dutch trains fitted with to get rid of leaves on the line?`,
     options: [`lasers`, `plows`, `compressed air`, `brooms`],
     correct: `lasers`,
-    wrongtext: `No, it's so much cooler than that, it's <a href="https://spectrum.ieee.org/tech-talk/transportation/safety/dutch-trains-prove-that-everything-is-better-with-lasers" target="_blank">FREAKING LASERS</a>! In a move straight out of science fiction, Dutch trains have been equipped wiht lasers that can vaporize any leaves on the track. Leaves that have been run over can form hard crusts on tracks or wheels, causing delays up to 4.5 million hours a year.`,
+    wrongtext: `No, it's so much cooler than that, it's <a href="https://spectrum.ieee.org/tech-talk/transportation/safety/dutch-trains-prove-that-everything-is-better-with-lasers" target="_blank">FREAKING LASERS</a>! In a move straight out of science fiction, Dutch trains have been equipped wiht lasers that can vaporize any leaves on the track. Runover leaves can form hard crusts on tracks or wheels, causing delays of up to 4.5 million hours a year.`,
     wrongimage: `./assets/images/lasers_on.gif`,
     correcttext: `It's so cool, it's lasers! Run over leaves have caused up to 4.5 million hours of delays on Dutch railways in past years so recently trains were outfitted with lasers to <a href="https://spectrum.ieee.org/tech-talk/transportation/safety/dutch-trains-prove-that-everything-is-better-with-lasers" target="_blank">vaporize organic material</a> on the tracks. Science fiction meets science fact!`,
     correctimage: `./assets/images/many_lasers.gif`
@@ -285,7 +277,7 @@ const questions = [
     options: [`submarine`, `tank`, `airplane`, `car`],
     correct: `submarine`,
     wrongtext: `Submarines have started to become a huge part of the narative when talking about how drugs enter the United States, especially cocaine. So called <a href="https://www.usatoday.com/story/news/nation-now/2017/12/11/u-s-coast-guard-intercepts-semi-submersible-vessel-packed-3-800-pounds-cocaine/939668001/" target="_blank">"narco subs"</a> have been seen more and more frequently in waters around the US, and multiple have been intercepted by the Coast Guard.`,
-    wrongimage: `./assets/images/yelloiw_submarine.gif`,
+    wrongimage: `./assets/images/yellow_submarine.gif`,
     correcttext: `Many homemade submarine-like vehicles are now bringing cocaine and other drugs into the United States. These <a href="https://www.usatoday.com/story/news/nation-now/2017/12/11/u-s-coast-guard-intercepts-semi-submersible-vessel-packed-3-800-pounds-cocaine/939668001/" target="_blank">"narco subs"</a>, as they are called, have been found with thousands of pounds of cacaine in them floating through America's border waters.`,
     correctimage: `./assets/images/submarine_rise.gif`
   },
