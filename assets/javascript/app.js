@@ -258,45 +258,45 @@ const questions = [
     options: [`1200`, `200`, `10`, `700`],
     correct: `1200`,
     wrongtext: `Actually, Wilson was an avid golfer. He's reported to be the most prolific presidential golfer with around 1200 games played while in office. There's ben a lot of presidents interested in playing golf, as <a href="https://www.golfchannel.com/article/golf-central-blog/obamas-final-tally-333-rounds-golf-potus" target="_blank">this</a> article points out.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/golf1.gif`,
     correcttext: `Wilson really, really loved playing golf. Even more than our last <a href="https://www.golfchannel.com/article/golf-central-blog/obamas-final-tally-333-rounds-golf-potus" target="_blank">few presidents</a>. No one else has come even close to his record of 1200 rounds of golf during his tenure.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/golf2.gif`
   },
   {
     question: `What are Dutch trains fitted with to get rid of leaves on the line?`,
     options: [`lasers`, `plows`, `compressed air`, `brooms`],
     correct: `lasers`,
     wrongtext: `No, it's so much cooler than that, it's <a href="https://spectrum.ieee.org/tech-talk/transportation/safety/dutch-trains-prove-that-everything-is-better-with-lasers" target="_blank">FREAKING LASERS</a>! In a move straight out of science fiction, Dutch trains have been equipped wiht lasers that can vaporize any leaves on the track. Leaves that have been run over can form hard crusts on tracks or wheels, causing delays up to 4.5 million hours a year.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/lasers_on.gif`,
     correcttext: `It's so cool, it's lasers! Run over leaves have caused up to 4.5 million hours of delays on Dutch railways in past years so recently trains were outfitted with lasers to <a href="https://spectrum.ieee.org/tech-talk/transportation/safety/dutch-trains-prove-that-everything-is-better-with-lasers" target="_blank">vaporize organic material</a> on the tracks. Science fiction meets science fact!`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/many_lasers.gif`
   },
   {
     question: `In Wales, what used to determine the amount of land you could claim around your house?`,
     options: [`how far you could throw an axe`, `how far you could run in 5 seconds`, `30 paces from the walls of your house`, `how many people you had in your family`],
     correct: `how far you could throw an axe`,
     wrongtext: `Nah, it was so hardcore--it was how far you could throw an axe! This came after you had built the house on that land in one day, of course. If you could do <a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank">this</a> though then you could throw an axe from each corner of the house to claim it as your own.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/axe_fail.gif`,
     correcttext: `Hardcore axe throwing! After you had built a house in one day and sent smoke up the chimney, you could <a href="http://naturalhomes.org/the-ugly-house.htm" target="_blank">throw an axe</a> from each corner of the house to claim the land as your own. Bet that made for some interesting neighborhoods, huh?`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/axe_success.gif`
   },
   {
     question: `Officials have seen up to 30% of cocaine in the United States being smuggled into the country by what vehicle?`,
     options: [`submarine`, `tank`, `airplane`, `car`],
     correct: `submarine`,
     wrongtext: `Submarines have started to become a huge part of the narative when talking about how drugs enter the United States, especially cocaine. So called <a href="https://www.usatoday.com/story/news/nation-now/2017/12/11/u-s-coast-guard-intercepts-semi-submersible-vessel-packed-3-800-pounds-cocaine/939668001/" target="_blank">"narco subs"</a> have been seen more and more frequently in waters around the US, and multiple have been intercepted by the Coast Guard.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/yelloiw_submarine.gif`,
     correcttext: `Many homemade submarine-like vehicles are now bringing cocaine and other drugs into the United States. These <a href="https://www.usatoday.com/story/news/nation-now/2017/12/11/u-s-coast-guard-intercepts-semi-submersible-vessel-packed-3-800-pounds-cocaine/939668001/" target="_blank">"narco subs"</a>, as they are called, have been found with thousands of pounds of cacaine in them floating through America's border waters.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/submarine_rise.gif`
   },
   {
     question: `In 2018 NASA sent an astronaut to the International Space Station who had which fear?`,
     options: [`heights`, `spiders`, `space`, `flying`],
     correct: `heights`,
     wrongtext: `Rather ironically, he had a fear of <a href="https://www.cnet.com/news/nasa-astronaut-fear-of-heights-going-to-iss-space-station-anyway/" target="_blank">heights</a>! Drew Feustel was sent up to the ISS with a 'mild fear of heights,' though he claims it doesn't affect him once he's up in space. Apparently you really can do anything you set your mind to!`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/heights2.gif`,
     correcttext: `Crazy to think that they sent a man with a 'mild fear of heights' up to the highest point any human can go, but <a href="https://www.cnet.com/news/nasa-astronaut-fear-of-heights-going-to-iss-space-station-anyway/" target="_blank">Drew Feustel</a> went. He claims that once in space the phobia doesn't affect him, even from the highest point humanity has reached.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/heights.gif`
   },
   {
     question: `By the number of tires made, what company was the biggest tire manufacturer in the world in 2011?`,
