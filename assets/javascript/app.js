@@ -213,36 +213,36 @@ const questions = [
     options: [`Pieza lunulata`, `Pieza pi`, `Pieza rudis`, `Pieza tabanidae`],
     correct: `Pieza pi`,
     wrongtext: `Actually, that's not true. Pieza kake, Pieza pi, Pieza rhea, and Pieza deresistans are all species of the Pieza genus. Some funny names, right? Check them all out <a href="https://en.wikipedia.org/wiki/Pieza" target="_blank">here</a>.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/flying_pizza.gif`,
     correcttext: `Pieza kake, Pieza pi, Pieza rhea, and Pieza deresistans are all species of the Pieza genus of fly. That's science humor for you. Check them all out <a href="https://en.wikipedia.org/wiki/Pieza" target="_blank">here</a>.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/pizza_time.gif`
   },
   {
     question: `What country has the highest density of metal bands in the world?`,
     options: [`Finland`, `England`, `Russia`, `Ireland`],
     correct: `Finland`,
     wrongtext: `Believe it or not, it's Finland! Check out a <a href="https://www.gislounge.com/map-of-heavy-metal-bands-by-country-per-capita/" target="_blank">map</a> calculated per 1000,000 people in countries around the world.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/dog_drummer.gif`,
     correcttext: `Finland actually has the most when compared against a country’s total population. There's even a <a href="https://www.gislounge.com/map-of-heavy-metal-bands-by-country-per-capita/" target="_blank">map</a> color-coded to show where the most bands are located.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/metal_dog.gif`
   },
   {
     question: `Shuttlecocks used in professional badminton are made of feathers from what part of a goose?`,
     options: [`neck`, `left wing`, `right wing`, `chest`],
     correct: `left wing`,
     wrongtext: `Professional badminton shuttlecocks are made only from the feathers from the left wing of geese. When feathers from the right wing are used, the shuttlecock spins counterclockwise, and that simply won't do where professionals are concerned. You can find out more about the aerodynamics and process <a href="https://www.inverse.com/article/19768-2016-rio-olympics-goose-geese-left-wing-badminton-shuttlecock" target="_blank">here</a>.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/badminton_drop.gif`,
     correcttext: `Only left wing feathers will do for professional shuttlecocks. When made using these feathers, a clockwise spin is produced, but feathers from the right wing produce a counterclockwise spin. Who knew physics was for the birds? More info on this topic <a href="https://www.inverse.com/article/19768-2016-rio-olympics-goose-geese-left-wing-badminton-shuttlecock" target="_blank">here</a>.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/badminton_time.gif`
   },
   {
     question: `Restaurants in 1950s Vietnam used to do what to their spoons to stop people from stealing them?`,
     options: [`put holes in them`, `made them really small`, `used sporks instead`, `made them flat`],
     correct: `put holes in them`,
     wrongtext: `Actually, they put holes in them! As counterintuitive as it sounds, it worked. People didn't like the way the spoons worked and stopped stealing them. You can find out more about this and the history of Pho <a href="https://www.vietworldkitchen.com/blog/2018/03/the-history-of-pho.html" target="_blank">here</a>.`,
-    wrongimage: `./assets/images/wrong.gif`,
+    wrongimage: `./assets/images/no_spoon.gif`,
     correcttext: `They put holes in them! As weird and crazy as it sounds, it worked for a while. People stopped stealing them becuase they didn't work well. You can find out more about this and the history of Pho <a href="https://www.vietworldkitchen.com/blog/2018/03/the-history-of-pho.html" target="_blank">here</a>.`,
-    correctimage: `./assets/images/correct.gif`
+    correctimage: `./assets/images/soup_nazi.gif`
   },
   {
     question: `What font was the discovery of the Higgs boson announced in?`,
